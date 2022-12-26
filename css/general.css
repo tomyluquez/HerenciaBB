@@ -239,6 +239,23 @@ ul li a:hover{
         color: var(--blanco);
     }
 
+    .scroll .navBarToggle{
+        background-color: var(--blanco);
+    }
+
+    .scroll .searchToggle{
+        background-color: var(--blanco);
+    }
+
+    .scroll .search{
+        background-color: var(--blanco);
+        border: 1px solid var(--fondoHerencia);
+    }
+
+    .scroll .search::placeholder{
+        color: var(--fondoHerencia);
+    }
+
     .cont-menues ul{
         flex-direction: column;
         justify-content: flex-start;
