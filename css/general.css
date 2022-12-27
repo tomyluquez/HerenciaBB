@@ -34,7 +34,7 @@
     position: fixed;
     top: 0;
     transition: all .4s ease;
-    z-index: 100;
+    z-index: 700;
 }
 
 .cont-menues{
@@ -157,7 +157,32 @@ ul li a{
     transition: all .4s ease;
 }
 
+.whats{
+    width: 40px;
+    position: fixed;
+    z-index: 600;
+    bottom: 20px;
+    right: 20px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+.whatsAlert{
+    width: 150px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 600;
+    bottom: 6px;
+    right: 70px;
+    padding: 15px 1px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    transition: all .4s ease;
+}
+
 /* HOVER */
+
 .buttonSearch:hover{
     background-color: var(--blanco);
     color: var(--fondoHerencia);

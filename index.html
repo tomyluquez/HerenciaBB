@@ -16,6 +16,13 @@
 </head>
 
 <body>
+  <div class="cont-whats">
+
+    <a href="http://wa.me/543517567005" target="_blank"><img src="/img/whatsappLogo.png" alt="" class="whats"></a>
+    <div class="alert alert-success whatsAlert" role="alert">
+      Escribinos! →
+    </div>
+  </div>
   <nav class="container-fluid cont-nav">
     <div class="contButton d-md-none .d-lg-block">
       <button class="hamburger hamburger--vortex" type="button">
@@ -31,7 +38,7 @@
     <div class="cont-menues ">
       <ul class="ulMenus">
         <li><a href="index.html">Home</a></li>
-        <li><a href="productos.html">Productos</a></li>
+        <li><a href="productos.html" class="productos">Productos</a></li>
         <li><a href="login.html">Login</a></li>
       </ul>
     </div>
@@ -47,7 +54,7 @@
   </nav>
 
   <main class="carrusell">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
           aria-current="true" aria-label="Slide 1"></button>
@@ -57,17 +64,15 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <picture>
-            <source srcset="/img/Productos/1cel.png" media="(max-width: 800px)">
-            <img src="/img/Productos/1.png" alt="" class="d-block">
+            <source srcset="/img/carrusellCel1.jpeg" media="(max-width: 800px)">
+            <img src="/img/carrusell1.png" alt="" class="d-block">
           </picture>
-          <!-- <img srcset="/img/Productos/1cel.png, /img/Productos/1.png 800px" class="image1 d-block" alt="..."> -->
         </div>
         <div class="carousel-item">
           <picture>
-            <source srcset="/img/Productos/2cel.png" media="(max-width: 800px)">
-            <img src="/img/Productos/2.png" alt="" class="d-block">
+            <source srcset="/img/carrusellCel2.png" media="(max-width: 800px)">
+            <img src="/img/carrusell2.png" alt="" class="d-block">
           </picture>
-          <!-- <img src="/img/Productos/2.png" class="image2 d-block" alt="..."> -->
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -284,7 +289,7 @@
   </div>
   <div class="container-flui d-flex justify-content-center aling-items-center flex-column form">
     <h3 class="text-center texto">Suscribite y recibi todas las novedades y promociones antes que nadie</h3>
-    <div class="row d-flex justify-content-center aling-items-center text-center">
+    <div class="row rowForm d-flex justify-content-center aling-items-center text-center">
       <div class="col-sm-5 col-md-5 px-0">
         <form class="formulario d-flex justify-content-center aling-items-center flex-column needs-validation">
           <div class="inputs">
@@ -313,16 +318,16 @@
       <div class="col-sm-8 col-md-3 colFooter">
         <h5>NUESTRAS REDES</h5>
         <div class="cont-redes">
-          <a href="http://www.instagram.com/herencia.bb" class="redes" target="_blank"><i
+          <a href="http://www.instagram.com/herencia.bb" class="redes logos" target="_blank"><i
               class="bi bi-instagram"></i></a>
-          <a href="http://www.facebook.com/herencia.bb" class="redes" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100083933232141" class="redes logos" target="_blank"><i class="bi bi-facebook"></i></a>
         </div>
       </div>
       <div class="col-sm-8 col-md-3 colFooter">
         <h5>CONTACTO</h5>
         <div class="colContacto">
-          <span><i class="bi bi-telephone-forward"></i> 3517567005</span>
-          <span><i class="bi bi-envelope"></i> herencia.bb.cba@gmail.com</span>
+          <a href="tel:+549517567005" class="redes"><span><i class="bi bi-telephone-forward"></i> 3517567005</span></a>
+          <a href="mailto:herencia.bb.cba@gmail.com" class="redes"><i class="bi bi-envelope"></i><span> herencia.bb.cba@gmail.com</span></a>
           <span><i class="bi bi-geo-alt"></i> Cordoba, Argentina</span>
         </div>
       </div>
