@@ -5,6 +5,19 @@ ROOTS
 }
 
 /* ESTILOS CONTENEDORES */
+.row.precios{
+    gap: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row.precios span{
+    width: auto;
+
+}
+
 .rowCopy{
     text-align: center;
     background-color: #95897c;
@@ -142,6 +155,21 @@ option{
 }
 
 /* ESTILOS INDIVIDUALES */
+.cartAlert{
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 600;
+    top: 100px;
+    left: 9%;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    transition: all .4s ease;
+    display: none;
+}
+
 .cantidades input{
     border-radius: 3px;
     border: none;
@@ -423,6 +451,11 @@ h2{
 
     .rowForm{
         width: 320px;
+    }
+
+    .cartAlert{
+        width: 90%;
+        left: 4.5%;
     }
 }
 
