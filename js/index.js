@@ -126,8 +126,8 @@ productos.forEach((producto) => {
     spanPrecio.classList.add('precio')
     const spanPrecio2 = document.createElement('span');
     spanPrecio.classList.add('precio')
-    spanPrecio.innerHTML = `Precio:`
-    spanPrecio2.innerHTML = `$${producto.precio}`
+    spanPrecio.innerHTML = `Precio: $${+producto.precio}`
+    // spanPrecio2.innerHTML = `$${producto.precio}`
     const divCantidades = document.createElement('div');
     divCantidades.classList.add('row','cantidades')
     const labelCantidades = document.createElement('label');
@@ -155,7 +155,7 @@ productos.forEach((producto) => {
     divTalles.appendChild(labelTalles)
     divCol.appendChild(divSpanPrecio)
     divSpanPrecio.appendChild(spanPrecio)
-    divSpanPrecio.appendChild(spanPrecio2)
+    // divSpanPrecio.appendChild(spanPrecio2)
     divCol.appendChild(divCantidades)
     divCantidades.appendChild(labelCantidades)
     divCantidades.appendChild(inputCantidades)
@@ -182,10 +182,12 @@ buttonCarrito.forEach((button) => {
         const productoElegido = {
             nombre: button.closest('.img1').childNodes[1].innerText,
             talle: button.closest('.img1').childNodes[2].children[1].value,
-            precio: +button.closest('.img1').childNodes[3].lastChild.innerText,
+            precio: +button.closest('.img1').childNodes[3].lastChild.innerText.
+            slice(9),
             cantidad: +button.closest('.img1').childNodes[4].lastChild.value,
         }
         checkStock(productoElegido)
+        
     })
 })
 
