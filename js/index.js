@@ -97,16 +97,28 @@ const productos = [
     }
 ];
 const productosElegidos = [];
-const cartAlert = document.querySelector('.cartAlert')
-
+const cartAlert = document.querySelector('.cartAlert');
+const buttonProducts = document.querySelector('.products');
 const rowProducts = document.querySelector('.rowProducts');
+const tbodyCarrito = document.querySelector('.tbodyCarrito');
+const spanCantidad = document.querySelector('.totalCantidades');
+const spanPrecio = document.querySelector('.totalPrecio');
+let spanCart = document.querySelector('.spanCart');
+let spanCartMobile = document.querySelector('.circleCart');
 
+// funcion para cambiar de pagina a la de productos //
+buttonProducts.addEventListener('click', () => {
+    document.location='productos.html'
+})
+
+// para cada producto que tenemos en el listado, se crea un div en la parte de compra rapida //
 productos.forEach((producto) => {
 
     const divCol = document.createElement('div');
     divCol.classList.add('col-sm-6','col-md-4','col-lg-2','img1','d-flex','justify-content-center','aling-items-center','flex-column')
     const img = document.createElement('img');
     img.src=producto.img
+    img.classList.add('imgProducts')
     const divSpanNombre = document.createElement('div');
     divSpanNombre.classList.add('row');
     const spanNombre = document.createElement('span');
@@ -124,10 +136,8 @@ productos.forEach((producto) => {
     divSpanPrecio.classList.add('row','precios')
     const spanPrecio = document.createElement('span');
     spanPrecio.classList.add('precio')
-    const spanPrecio2 = document.createElement('span');
     spanPrecio.classList.add('precio')
     spanPrecio.innerHTML = `Precio: $${+producto.precio}`
-    // spanPrecio2.innerHTML = `$${producto.precio}`
     const divCantidades = document.createElement('div');
     divCantidades.classList.add('row','cantidades')
     const labelCantidades = document.createElement('label');
@@ -145,8 +155,6 @@ productos.forEach((producto) => {
     const iconCarrito = document.createElement('i');
     iconCarrito.classList.add('bi','bi-cart-plus')
 
-
-
     rowProducts.appendChild(divCol);
     divCol.appendChild(img)
     divCol.appendChild(divSpanNombre)
@@ -155,7 +163,6 @@ productos.forEach((producto) => {
     divTalles.appendChild(labelTalles)
     divCol.appendChild(divSpanPrecio)
     divSpanPrecio.appendChild(spanPrecio)
-    // divSpanPrecio.appendChild(spanPrecio2)
     divCol.appendChild(divCantidades)
     divCantidades.appendChild(labelCantidades)
     divCantidades.appendChild(inputCantidades)
@@ -176,60 +183,145 @@ productos.forEach((producto) => {
 
 const buttonCarrito = document.querySelectorAll('.añadirCarrito');
 
+// funciones para los dinstitos botones del DOM //
+document.addEventListener('click', (event) => {
+    const carritoCompras = document.querySelector('.carritoCompras')
+    const navbar = document.querySelector('.cont-nav')
 
+    // si hacemos click en los carritos, se abre el carrito de compras y se agrega la sombra de atras //
+    if(event.target.classList.value === 'cont-cart' ||
+       event.target.classList.value === 'spanCart' ||
+       event.target.classList.value === 'cart' ||
+       event.target.classList.value === 'circleCart' ||
+       event.target.classList.value === 'bi bi-cart' ){
+        
+        carritoCompras.style.display='block'
+        navbar.classList.add('sombra')
+    }    
+
+    // si hacemos click en la X se cierra el carrito de compras y se quita la sombra de atras //
+    if(event.target.classList.value === 'bi bi-x'){
+        carritoCompras.style.display='none'
+        navbar.classList.remove('sombra')
+    }
+
+    // si hacemos click en el tacho de basura, eliminamos el producto //
+    if(event.target.classList.value === 'bi bi-trash3'){
+        const trEliminar = event.target.closest('.trCarrito')
+
+        // primero lo sacamos del array de productos elegidos y debemos devolver el stock//
+        for(let i=0; i<productosElegidos.length; i++){
+            if(productosElegidos[i].nombre === trEliminar.children[1].innerText &&
+               productosElegidos[i].talle === trEliminar.children[2].innerText){
+                productosElegidos.splice(i,1)
+            }
+        }
+        
+        // eliminamos la fila y llamamos a la funcion para renderizar el carrito de compras //
+        trEliminar.remove()
+        cart(productosElegidos)
+    }
+})
+
+// funcion para cada uno de los botones de añadir a carrito //
 buttonCarrito.forEach((button) => {
     button.addEventListener('click', () => {
+
+        // para cada boton, comprobamos de que se haya ingresado algun monto en las cantidades, si es un false, larga un error //
+        if(!+button.closest('.img1').childNodes[4].lastChild.value){
+            let errorStock = document.querySelector('.errorStock')
+            errorStock.innerText = 'no ingresaste ninguna cantidad'
+            errorStock.style.display='inline-block'
+            setTimeout(() => {
+                errorStock.style.display='none'
+            }, 3500);
+            return
+        }
+
+        // armamos un array de objetos con cada producto que vamos eligiendo //
         const productoElegido = {
+            img: button.closest('.img1').childNodes[0].src,
             nombre: button.closest('.img1').childNodes[1].innerText,
             talle: button.closest('.img1').childNodes[2].children[1].value,
             precio: +button.closest('.img1').childNodes[3].lastChild.innerText.
             slice(9),
             cantidad: +button.closest('.img1').childNodes[4].lastChild.value,
         }
+
+        // llamamos a la funcion que controla de que haya stock suficiente de ese producto y dejamos en blanco el value de las cantidades//
         checkStock(productoElegido)
+        button.closest('.img1').childNodes[4].lastChild.value = ""
         
     })
 })
 
+// funcion para chequear el stock disponible //
 const checkStock = productoElegido => {
+
+    // recorremos el array de los productos elegidos y comprobamos de que haya stock
     for(let i=0; i<productos.length; i++){
         if(productos[i].nombre === productoElegido.nombre){
+            // si hay stock, le restamos la cantidad deseada de compra, lanzamos alerta de exito y llamamos a la funcion que prepara el producto //
             if(productos[i].tallesYStock[productoElegido.talle] >= productoElegido.cantidad){
                 productos[i].tallesYStock[productoElegido.talle] -= productoElegido.cantidad
-                alertCart(productoElegido)
+                alertExito()
                 createItemCart(productoElegido)
             } else if(productos[i].tallesYStock[productoElegido.talle] < productoElegido.cantidad){
-                return alert(`No tenemos disponibles esas cantidades de ${productoElegido.nombre}, el stock es de ${productos[i].tallesYStock[productoElegido.talle]}`)
+                // si no hay stock, lanzamos alerta de que no hay esa cantidad disponible y detallamos cuantos queda//
+                let errorStock = document.querySelector('.errorStock')
+                errorStock.innerText = `No tenemos disponibles esas cantidades de ${productoElegido.nombre}, el stock es de ${productos[i].tallesYStock[productoElegido.talle]}`
+                errorStock.style.display='inline-block'
+                setTimeout(() => {
+                    errorStock.style.display='none'
+                }, 3500);
             }
         }
     }
 }
 
-
+// funcion para crear el objeto de cada producto seleccionado //
 const createItemCart = productoElegido =>{
+    //comprobamos de que si el producto se repite que nos sume una cantidad mas para evitar duplicados //
     for(let i=0; i<productosElegidos.length; i++){
         if(productosElegidos[i].nombre === productoElegido.nombre &&
             productosElegidos[i].talle === productoElegido.talle){
             productosElegidos[i].cantidad += productoElegido.cantidad
-            console.log(productosElegidos)
+            carritoComprasTabla(productosElegidos)
             return
         }
     }
+
+    // en caso de que no se repita, lo agregamos como un producto nuevo //
     productosElegidos.push(productoElegido)
     cart(productosElegidos)
+    carritoComprasTabla(productosElegidos)
+    
 }
 
-const alertCart = productoElegido => {
+// funcion para mostrar la alerta de exito al seleccionar el producto //
+const alertExito = () => {
     cartAlert.style.display='inline-block'
     setTimeout(() => {
         cartAlert.style.display='none'
     }, 2000);
 }
 
+// funcion para renderizar los span del carrito de compras //
 const cart = productosElegidos => {
-    let spanCart = document.querySelector('.spanCart')
-    let spanCartMobile = document.querySelector('.circleCart')
     
+    spanCantidad.innerHTML = ""
+    spanPrecio.innerHTML = ""
+
+    // si el array de productos elegidos esta vacio, vamos a dejar todos los campos en 0 //
+    if(productosElegidos.length === 0){
+        spanCart.innerHTML = "CARRITO (0) $0.00"
+        spanCartMobile.innerHTML = "0"
+        spanCantidad.innerHTML = 0
+        spanPrecio.innerHTML = 0
+        return null;
+    }
+    
+    // en caso de que tenga productos el array, vamos a sumar las cantidades y los preios para calcular los totales //
     let totalCantidad = productosElegidos.map(producto => {
        return producto.cantidad
     }).reduce((a,b) => a+b);
@@ -240,4 +332,44 @@ const cart = productosElegidos => {
     
      spanCart.innerHTML = `CARRITO (${totalCantidad}) $${totalPrecio}`
      spanCartMobile.innerHTML = totalCantidad
+     spanCantidad.innerHTML = totalCantidad
+     spanPrecio.innerHTML = `$${totalPrecio}`
+
+     carritoComprasTabla(productosElegidos)
 }
+
+// funcion para renderizar el carrito de compras //
+const carritoComprasTabla = productosElegidos => {
+
+    // vaciamos el carrito cada vez que llamamos a la funcion //
+    tbodyCarrito.innerHTML=""
+    productosElegidos.forEach((producto) => {
+        // para luego con cada uno de los productos crear un elemento de tabla y pegarselo al carrito
+        const tr = document.createElement('tr');
+        tr.classList.add('trCarrito')
+        let contenido = `
+        <th align="center" valign="middle"><img class="imgCarrito" src="${producto.img}" alt=""></th>
+        <td align="center" valign="middle">${producto.nombre}</td>
+        <td align="center" valign="middle">${producto.talle}</td>
+        <td align="center" valign="middle">$${producto.precio}</td>
+        <td align="center" valign="middle">${producto.cantidad}</td>
+        <td align="center" valign="middle">$${producto.precio * producto.cantidad}</td>
+        <td align="center" valign="middle"><button class="eliminar"><i class="bi bi-trash3"></i></button></td>
+        `
+        tr.innerHTML = contenido
+        tbodyCarrito.appendChild(tr)
+    })
+
+    // actualizamos las cantidades y los totales //
+    let totalCantidad = productosElegidos.map(producto => {
+        return producto.cantidad
+     }).reduce((a,b) => a+b);
+ 
+     let totalPrecio = productosElegidos.map(producto => {
+         return producto.cantidad * producto.precio
+      }).reduce((a,b) => a+b);
+
+      spanCantidad.innerHTML = totalCantidad
+      spanPrecio.innerHTML = `$${totalPrecio}`
+}
+

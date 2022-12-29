@@ -17,7 +17,6 @@
 
 <body>
   <div class="cont-whats">
-
     <a href="http://wa.me/543517567005" target="_blank"><img src="/img/whatsappLogo.png" alt="" class="whats"></a>
     <div class="alert alert-success whatsAlert" role="alert">
       Escribinos! →
@@ -25,6 +24,36 @@
     <div class="alert alert-success cartAlert" role="alert">
       <span>Se ha agergado el producto exitosamente</span>
     </div>
+    <div class="alert alert-danger cartAlert errorStock" role="alert">
+    </div>
+  </div>
+  <div class="carritoCompras">
+    <table class="table table-striped">
+      <span><i class="bi bi-x"></i></span>
+      <thead>
+        <tr>
+          <th scope="col">Img</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Talle</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Total</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="tbodyCarrito"> 
+      </tbody>
+      <tr class="trTotal">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Total</th>
+        <th class="totalCantidades"></th>
+        <th class="totalPrecio"></th>
+        <th></th>
+      </tr>
+    </table>
+    <button class="seeAll">Finalizar Compra</button>
   </div>
   <nav class="container-fluid cont-nav">
     <div class="contButton d-md-none .d-lg-block">
@@ -50,7 +79,7 @@
       <input type="button" value="Buscar" class="buttonSearch">
     </div>
     <div class="cont-cart">
-      <img class="cart" src="/img/carrito.png" alt="">
+      <i class="bi bi-cart"></i>
       <span class="spanCart">CARRITO (0) $0.00</span>
       <span class="circleCart">0</span>
     </div>
@@ -100,7 +129,7 @@
     </div>
   </div>
   <div class="cont-seeAll">
-    <button class="seeAll">Ver todos los Productos</button>
+    <button class="seeAll products">Ver todos los Productos</button>
   </div>
   <div class="container-fluid contPagos">
     <div class="row pagos">
