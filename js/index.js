@@ -183,39 +183,30 @@ productos.forEach((producto) => {
 
 const buttonCarrito = document.querySelectorAll('.añadirCarrito');
 
-// funciones para los dinstitos botones del DOM //
+// funcion para eliminar producto del carrito //
 document.addEventListener('click', (event) => {
-    const carritoCompras = document.querySelector('.carritoCompras')
-    const navbar = document.querySelector('.cont-nav')
-
-    // si hacemos click en los carritos, se abre el carrito de compras y se agrega la sombra de atras //
-    if(event.target.classList.value === 'cont-cart' ||
-       event.target.classList.value === 'spanCart' ||
-       event.target.classList.value === 'cart' ||
-       event.target.classList.value === 'circleCart' ||
-       event.target.classList.value === 'bi bi-cart' ){
-        
-        carritoCompras.style.display='block'
-        navbar.classList.add('sombra')
-    }    
-
-    // si hacemos click en la X se cierra el carrito de compras y se quita la sombra de atras //
-    if(event.target.classList.value === 'bi bi-x'){
-        carritoCompras.style.display='none'
-        navbar.classList.remove('sombra')
-    }
 
     // si hacemos click en el tacho de basura, eliminamos el producto //
     if(event.target.classList.value === 'bi bi-trash3'){
         const trEliminar = event.target.closest('.trCarrito')
 
-        // primero lo sacamos del array de productos elegidos y debemos devolver el stock//
+        // primero lo sacamos del array de productos elegidos//
         for(let i=0; i<productosElegidos.length; i++){
             if(productosElegidos[i].nombre === trEliminar.children[1].innerText &&
                productosElegidos[i].talle === trEliminar.children[2].innerText){
                 productosElegidos.splice(i,1)
             }
         }
+
+        //iteramos el array de productos y devolvemos el stock //
+        for(let i=0; i<productos.length; i++){
+            if(productos[i].nombre === trEliminar.children[1].innerText){
+                productos[i].tallesYStock[trEliminar.children[2].innerText] += 
+                +trEliminar.children[4].innerText
+            }
+        }
+
+        console.log(productos)
         
         // eliminamos la fila y llamamos a la funcion para renderizar el carrito de compras //
         trEliminar.remove()
@@ -266,6 +257,7 @@ const checkStock = productoElegido => {
                 productos[i].tallesYStock[productoElegido.talle] -= productoElegido.cantidad
                 alertExito()
                 createItemCart(productoElegido)
+                console.log(productos)
             } else if(productos[i].tallesYStock[productoElegido.talle] < productoElegido.cantidad){
                 // si no hay stock, lanzamos alerta de que no hay esa cantidad disponible y detallamos cuantos queda//
                 let errorStock = document.querySelector('.errorStock')

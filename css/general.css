@@ -449,7 +449,7 @@ ul li a:hover{
         align-items: center;
         text-align: center;
         position: absolute;
-        top: 5px;
+        top: 15px;
         right: 15px;    
     }
 
@@ -457,18 +457,23 @@ ul li a:hover{
         width: 95%;
         max-height: 100vh;
         position: fixed;
-        top: 5%;
+        top: 1%;
         left: 2%;
         text-align: center;
         background-color: var(--fondoHerencia);
         color: var(--blanco);
         z-index: 900;
-        padding: 20px;
+        padding: 20px 0px 5px 20px;
         display: flex;
         justify-content: center;
         align-items: center;
         display: none;
         transition: all .4s ease;
+        overflow: auto;
+    }
+
+    .carritoCompras button{
+        margin: 0;
     }
 
     .trCarrito th{
@@ -487,6 +492,14 @@ ul li a:hover{
     thead tr th:nth-child(3),
     thead tr th:nth-child(3){
         display: none;
+    }
+
+    .bi.bi-cart{
+        font-size: 2rem;
+    }
+
+    .cartAlert{
+        height: auto;
     }
     
 }
