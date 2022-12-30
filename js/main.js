@@ -4,6 +4,9 @@ const menues = document.querySelector('.cont-menues')
 const search = document.querySelector('.cont-search')
 
 window.addEventListener('load', () => {
+    const loader = document.querySelector('.cont-loader')
+    loader.style.display='none'
+    
     setTimeout(() => {
         const whatsAlert = document.querySelector('.whatsAlert')
         whatsAlert.style.display='none'
@@ -34,6 +37,18 @@ document.addEventListener('click', (event) => {
        event.target.classList.value === 'cart' ||
        event.target.classList.value === 'circleCart' ||
        event.target.classList.value === 'bi bi-cart' ){
+
+        // agregamos alerta si el carrito esta vacio //
+        if(productosElegidos.length === 0){
+            const emptyCart = document.getElementById('emptyCart');
+
+            emptyCart.style.display='inline-block'
+            setTimeout(() => {
+                emptyCart.style.display='none'
+            }, 3000);
+
+            return
+        }
         
         carritoCompras.style.display='block'
         navbar.classList.add('sombra')
@@ -45,3 +60,4 @@ document.addEventListener('click', (event) => {
         navbar.classList.remove('sombra')
     }
 })
+

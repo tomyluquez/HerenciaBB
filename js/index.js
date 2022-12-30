@@ -1,4 +1,6 @@
-const productos = [
+const productosElegidos = JSON.parse(localStorage.getItem('productosElegidos')) || [];
+const productos = JSON.parse(localStorage.getItem('productos')) || 
+[
     {
         nombre: 'Babero con Toalla',
         tallesYStock:{
@@ -96,7 +98,24 @@ const productos = [
         precio: 5699
     }
 ];
-const productosElegidos = [];
+window.addEventListener('load', () => {
+
+    // si hay productos cargados en el local storage, lo cargamos en el carrito y //
+    //tiramos la alerta para que terminen la compra //
+    if(productosElegidos.length > 0){
+
+        const finishAlert = document.getElementById('finishAlert');
+
+        finishAlert.style.display='inline-block'
+        setTimeout(() => {
+            finishAlert.style.display='none'
+        }, 3000);
+
+        cart(productosElegidos)
+
+    }
+})
+
 const cartAlert = document.querySelector('.cartAlert');
 const buttonProducts = document.querySelector('.products');
 const rowProducts = document.querySelector('.rowProducts');
@@ -105,6 +124,7 @@ const spanCantidad = document.querySelector('.totalCantidades');
 const spanPrecio = document.querySelector('.totalPrecio');
 let spanCart = document.querySelector('.spanCart');
 let spanCartMobile = document.querySelector('.circleCart');
+const form = document.querySelector('.formulario');
 
 // funcion para cambiar de pagina a la de productos //
 buttonProducts.addEventListener('click', () => {
@@ -198,19 +218,23 @@ document.addEventListener('click', (event) => {
             }
         }
 
-        //iteramos el array de productos y devolvemos el stock //
+        //iteramos el array de productos, devolvemos el stock y actualizamos el localstorage //
         for(let i=0; i<productos.length; i++){
             if(productos[i].nombre === trEliminar.children[1].innerText){
                 productos[i].tallesYStock[trEliminar.children[2].innerText] += 
                 +trEliminar.children[4].innerText
+
+                localStorage.setItem('productos', JSON.stringify(productos))
             }
         }
 
-        console.log(productos)
-        
         // eliminamos la fila y llamamos a la funcion para renderizar el carrito de compras //
         trEliminar.remove()
         cart(productosElegidos)
+
+        if(productosElegidos.length === 0){
+            localStorage.removeItem('productosElegidos')
+        }
     }
 })
 
@@ -257,15 +281,18 @@ const checkStock = productoElegido => {
                 productos[i].tallesYStock[productoElegido.talle] -= productoElegido.cantidad
                 alertExito()
                 createItemCart(productoElegido)
-                console.log(productos)
+
+                //enviamos al locl storage, el stock acutalizado //
+                localStorage.setItem('productos', JSON.stringify(productos))
+                
             } else if(productos[i].tallesYStock[productoElegido.talle] < productoElegido.cantidad){
                 // si no hay stock, lanzamos alerta de que no hay esa cantidad disponible y detallamos cuantos queda//
                 let errorStock = document.querySelector('.errorStock')
-                errorStock.innerText = `No tenemos disponibles esas cantidades de ${productoElegido.nombre}, el stock es de ${productos[i].tallesYStock[productoElegido.talle]}`
+                errorStock.innerText = `No tenemos disponibles esas cantidades de ${productoElegido.nombre} en talle ${productoElegido.talle}, el stock es de ${productos[i].tallesYStock[productoElegido.talle]}`
                 errorStock.style.display='inline-block'
                 setTimeout(() => {
                     errorStock.style.display='none'
-                }, 3500);
+                }, 4500);
             }
         }
     }
@@ -332,6 +359,8 @@ const cart = productosElegidos => {
 
 // funcion para renderizar el carrito de compras //
 const carritoComprasTabla = productosElegidos => {
+    // enviamos al localstorage, los productos seleccionados //
+    localStorage.setItem('productosElegidos', JSON.stringify(productosElegidos))
 
     // vaciamos el carrito cada vez que llamamos a la funcion //
     tbodyCarrito.innerHTML=""
@@ -365,3 +394,12 @@ const carritoComprasTabla = productosElegidos => {
       spanPrecio.innerHTML = `$${totalPrecio}`
 }
 
+// evento para enviar la informacion del formulario //
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const alertForm = document.getElementById('datosForm')
+    alertForm.style.display='inline-block'
+    setTimeout(() => {
+        alertForm.style.display='none'
+    }, 2000);
+})

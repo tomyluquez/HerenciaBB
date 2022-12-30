@@ -16,6 +16,9 @@
 </head>
 
 <body>
+  <div class="container-flui cont-loader">
+    <span class="loader"></span>
+  </div>
   <div class="cont-whats">
     <a href="http://wa.me/543517567005" target="_blank"><img src="/img/whatsappLogo.png" alt="" class="whats"></a>
     <div class="alert alert-success whatsAlert" role="alert">
@@ -25,6 +28,15 @@
       <span>Se ha agergado el producto exitosamente</span>
     </div>
     <div class="alert alert-danger cartAlert errorStock" role="alert">
+    </div>
+    <div class="alert alert-warning cartAlert" id="finishAlert" role="alert">
+      <span>Tienes productos en el carrito, Termina la compra !</span>
+    </div>
+    <div class="alert alert-warning cartAlert" id="emptyCart" role="alert">
+      <span>El carrito esta vacio</span>
+    </div>
+    <div class="alert alert-success cartAlert" id="datosForm" role="alert">
+      <span>Los datos se han enviado correctamente</span>
     </div>
   </div>
   <div class="carritoCompras">
