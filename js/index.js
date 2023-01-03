@@ -1,3 +1,5 @@
+
+
 const productosElegidos = JSON.parse(localStorage.getItem('productosElegidos')) || [];
 const productos = JSON.parse(localStorage.getItem('productos')) || 
 [
@@ -8,7 +10,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         img:  '/img/Productos/BaberoconToalla.jpeg',
         img2: '/img/Productos/BaberoconToalla2.jpeg',
-        categoria: ['Accesorios y Otros'],
+        categoria: ['accesorios y otros'],
         busqueda: ['babero', 'accesorios','babitas'],
         precio: 1549
     },
@@ -21,7 +23,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         color: 'Blanco',
         img: '/img/Productos/BodyconVestido4.jpeg',
         img2: '/img/Productos/BodyconVestido2.jpeg',
-        categoria: ['Bodys', 'Vestidos'],
+        categoria: ['bodys', 'vestidos'],
         busqueda: ['body','vestido', 'nenas'],
         precio: 5699
     },
@@ -34,7 +36,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         color: 'Beige',
         img:'/img/Productos/BodyLinoBeige.jpeg',
         img2:'/img/Productos/BodyLinoBeige3.jpeg',
-        categoria: ['Bodys'],
+        categoria: ['bodys'],
         busqueda:['body','lino'],
         precio: 4699
     },
@@ -47,7 +49,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         color: 'Leoncitos',
         img: '/img/Productos/CRN-Leoncitos2.jpeg',
         img2: '/img/Productos/CRN-Leoncitos.jpeg',
-        categoria: ['Conjuntos'],
+        categoria: ['conjuntos'],
         busqueda: ['conjuntos', 'recien nacidos',],
         precio: 4399
     },
@@ -60,7 +62,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         color: 'Azul',
         img: '/img/Productos/RemeraLinoAzulRayado.jpeg',
         img2: '/img/Productos/RemeraLinoAzulRayado2.jpeg',
-        categoria:['Remeras'],
+        categoria:['remeras'],
         busqueda:['remeras','lino'],
         precio: 4699
     },
@@ -72,7 +74,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         color: 'Beige',
         img: '/img/Productos/RemeraLinoBeige2.jpeg',
         img2: '/img/Productos/RemeraLinoBeige3.jpeg',
-        categoria:['Remeras'],
+        categoria:['remeras'],
         busqueda:['remeras','lino'],
         precio: 4699
     },
@@ -87,7 +89,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         color: 'Celeste',
         img: '/img/Productos/ShortWaffleCeleste.jpeg',
         img2: '/img/Productos/ShortWaffleCeleste2.jpeg',
-        categoria:['Partecitas de Abajo'],
+        categoria:['partecitas de abajo'],
         busqueda:['short','waffle','pantalon'],
         precio: 3099
     },
@@ -101,7 +103,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         color: 'Hortencias',
         img: '/img/Productos/VestidoHortensias.jpeg',
         img2: '/img/Productos/VestidoHortensias2.jpeg',
-        categoria:['Vestidos'],
+        categoria:['vestidos'],
         busqueda:['vestidos','nena'],
         precio: 5699
     }
@@ -133,6 +135,7 @@ const spanPrecio = document.querySelector('.totalPrecio');
 let spanCart = document.querySelector('.spanCart');
 let spanCartMobile = document.querySelector('.circleCart');
 const form = document.querySelector('.formulario');
+const buttoSearch= document.querySelector('.buttonSearch')
 
 // funcion para cambiar de pagina a la de productos //
 buttonProducts.addEventListener('click', () => {
@@ -435,4 +438,18 @@ imgProducts.forEach(img => {
             }
         }
     })
+})
+
+// evento para el input de busqueda //
+buttoSearch.addEventListener('click', ()=>{
+    const inputBusqueda = document.querySelector('.search').value
+
+    if(!inputBusqueda){
+        alert('no ingresaste ninguna busuqeda')
+        return
+    }
+
+    const busqueda = [inputBusqueda]
+    localStorage.setItem('busqueda',JSON.stringify(busqueda))
+    document.location='productos.html'
 })

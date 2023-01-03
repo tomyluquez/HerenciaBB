@@ -6,7 +6,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         },
         img:  '/img/Productos/BaberoconToalla.jpeg',
         img2: '/img/Productos/BaberoconToalla2.jpeg',
-        categoria: ['Accesorios y Otros'],
+        categoria: ['accesorios y otros'],
         busqueda: ['babero', 'accesorios','babitas'],
         precio: 1549
     },
@@ -19,7 +19,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         color: 'Blanco',
         img: '/img/Productos/BodyconVestido4.jpeg',
         img2: '/img/Productos/BodyconVestido2.jpeg',
-        categoria: ['Bodys', 'Vestidos'],
+        categoria: ['bodys', 'vestidos'],
         busqueda: ['body','vestido', 'nenas'],
         precio: 5699
     },
@@ -32,7 +32,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         color: 'Beige',
         img:'/img/Productos/BodyLinoBeige.jpeg',
         img2:'/img/Productos/BodyLinoBeige3.jpeg',
-        categoria: ['Bodys'],
+        categoria: ['bodys'],
         busqueda:['body','lino'],
         precio: 4699
     },
@@ -45,7 +45,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         color: 'Leoncitos',
         img: '/img/Productos/CRN-Leoncitos2.jpeg',
         img2: '/img/Productos/CRN-Leoncitos.jpeg',
-        categoria: ['Conjuntos'],
+        categoria: ['conjuntos'],
         busqueda: ['conjuntos', 'recien nacidos',],
         precio: 4399
     },
@@ -58,7 +58,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         color: 'Azul',
         img: '/img/Productos/RemeraLinoAzulRayado.jpeg',
         img2: '/img/Productos/RemeraLinoAzulRayado2.jpeg',
-        categoria:['Remeras'],
+        categoria:['remeras'],
         busqueda:['remeras','lino'],
         precio: 4699
     },
@@ -70,7 +70,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         color: 'Beige',
         img: '/img/Productos/RemeraLinoBeige2.jpeg',
         img2: '/img/Productos/RemeraLinoBeige3.jpeg',
-        categoria:['Remeras'],
+        categoria:['remeras'],
         busqueda:['remeras','lino'],
         precio: 4699
     },
@@ -85,7 +85,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         color: 'Celeste',
         img: '/img/Productos/ShortWaffleCeleste.jpeg',
         img2: '/img/Productos/ShortWaffleCeleste2.jpeg',
-        categoria:['Partecitas de Abajo'],
+        categoria:['partecitas de abajo'],
         busqueda:['short','waffle','pantalon'],
         precio: 3099
     },
@@ -99,7 +99,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         color: 'Hortencias',
         img: '/img/Productos/VestidoHortensias.jpeg',
         img2: '/img/Productos/VestidoHortensias2.jpeg',
-        categoria:['Vestidos'],
+        categoria:['vestidos'],
         busqueda:['vestidos','nena'],
         precio: 5699
     }
@@ -114,7 +114,7 @@ const productosGenerales = [
         img:  '/img/Productos/AjuarBajoelmarKale1.jpeg',
         img2: '/img/Productos/AjuarBajoelmarKale2.jpeg',
         color: 'Verde Kale',
-        categoria: ['Ajuares', 'Conjuntos'],
+        categoria: ['ajuares', 'conjuntos'],
         busqueda: ['ajuar', 'conjunto','pantalon'],
         precio: 3749
     },
@@ -127,7 +127,7 @@ const productosGenerales = [
         img:  '/img/Productos/BodyAlmendra.jpeg',
         img2: '/img/Productos/BodyAlmendra2.jpeg',
         Color: 'Almendra',
-        categoria: ['Bodys'],
+        categoria: ['bodys'],
         busqueda: ['body', 'remera'],
         precio: 3699
     },
@@ -140,7 +140,7 @@ const productosGenerales = [
         img:  '/img/Productos/Bodyoceanoblanco.jpeg',
         img2: '/img/Productos/Bodyoceanoblanco2.jpeg',
         Color: 'Celeste Oceano',
-        categoria: ['Bodys'],
+        categoria: ['bodys'],
         busqueda: ['body'],
         precio: 3999 
     },
@@ -153,7 +153,7 @@ const productosGenerales = [
         img:  '/img/Productos/ConjunoAventuraKale.jpeg',
         img2: '/img/Productos/ConjunoAventuraKale2.jpeg',
         Color: 'Verde Kale',
-        categoria: ['Conjuntos'],
+        categoria: ['conjuntos'],
         busqueda: ['conjunto', 'remeras', 'short'],
         precio: 5699
     },
@@ -165,7 +165,7 @@ const productosGenerales = [
         },
         img:  '/img/Productos/Baberos.jpeg',
         img2: '/img/Productos/Baberos2.jpeg',
-        categoria: ['Accesorios y Otros'],
+        categoria: ['accesorios y otros'],
         busqueda: ['babero', 'accesorio'],
         precio: 1199
     },
@@ -178,7 +178,7 @@ const productosGenerales = [
         img:  '/img/Productos/BuzoPecasNatural.jpeg',
         img2: '/img/Productos/BuzoPecasNatural2.jpeg',
         Color: 'Natural',
-        categoria: ['Buzos'],
+        categoria: ['buzos'],
         busqueda: ['buzos', 'abrigos'],
         precio: 6099
     },
@@ -191,7 +191,7 @@ const productosGenerales = [
         img:  '/img/Productos/Buzopecasceleste.jpeg',
         img2: '/img/Productos/Buzopecasceleste2.jpeg',
         Color: 'Celeste',
-        categoria: ['Buzos'],
+        categoria: ['buzos'],
         busqueda: ['buzo', 'abrigo'],
         precio: 6099
     },
@@ -204,7 +204,7 @@ const productosGenerales = [
         img:  '/img/Productos/AjuarBajoelmargris.jpeg',
         img2: '/img/Productos/AjuarBajoelmargris2.jpeg',
         Color: 'Gris',
-        categoria: ['Ajuares'],
+        categoria: ['ajuares'],
         busqueda: ['ajuar', 'pantalon', 'conjunto'],
         precio: 3749
     },
@@ -217,7 +217,7 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoArcoiris.jpeg',
         img2: '/img/Productos/ConjuntoArcoiris2.jpeg',
         Color: 'Limon',
-        categoria: ['Conjuntos'],
+        categoria: ['conjuntos'],
         busqueda: ['conjunto', 'remera', 'short'],
         precio: 4699
     },
@@ -231,8 +231,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoAventuraSky.jpeg',
         img2: '/img/Productos/ConjuntoAventuraSky2.jpeg',
         Color: 'Celeste Sky',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjunto', 'remera', 'short'],
+        categoria: ['conjuntos'],
+        busqueda: ['conjunto', 'remera', 'short'],
         precio: 5699
     },
     {
@@ -243,8 +243,8 @@ const productosGenerales = [
         img:  '/img/Productos/Conjuntobajoelmarbeige.jpeg',
         img2: '/img/Productos/Conjuntobajoelmarbeige2.jpeg',
         Color: 'Beige',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjunto', 'remera', 'short'],
+        categoria: ['conjuntos'],
+        busqueda: ['conjunto', 'remera', 'short'],
         precio: 4699
     },
     {
@@ -256,8 +256,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoOceanoLimonada.jpeg',
         img2: '/img/Productos/ConjuntoOceanoLimonada2.jpeg',
         Color: 'Limonada',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],
         precio: 5199
     },
     {
@@ -269,8 +269,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoExploringKale.jpeg',
         img2: '/img/Productos/ConjuntoExploringKale2.jpeg',
         Color: 'Verde Kale',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],
         precio: 5499
     },
     {
@@ -282,7 +282,7 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoExploringMaiz.jpeg',
         img2: '/img/Productos/ConjuntoExploringMaiz2.jpeg',
         Color: 'Verde Maiz',
-        categoria: ['Conjuntos'],
+        categoria: ['conjuntos'],
         busqueda: ['Conjuto', 'remera', 'short'],
         precio: 5499
     },
@@ -294,8 +294,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoFlorecerGris.jpeg',
         img2: '/img/Productos/ConjuntoFlorecerGris2.jpeg',
         Color: 'Gris',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],
         precio: 3999
     },
     {
@@ -308,8 +308,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoHelenaCamel.jpeg',
         img2: '/img/Productos/ConjuntoHelenaCamel2.jpeg',
         Color: 'Camel',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],
         precio: 5699
     },
     {
@@ -322,8 +322,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoHippoKale.jpeg',
         img2: '/img/Productos/ConjuntoHippoKale2.jpeg',
         Color: 'Verde Kale',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],   
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],   
         precio: 5699
     },
     {
@@ -334,8 +334,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoHippoSky.jpeg',
         img2: '/img/Productos/ConjuntoHippoSky2.jpeg',
         Color: 'Verde Sky',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],   
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],   
         precio: 5699
     },
     {
@@ -346,8 +346,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoLeonelaBeige.jpeg',
         img2: '/img/Productos/ConjuntoLeonelaBeige2.jpeg',
         Color: 'Beige',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],   
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],   
         precio: 6499
     },
     {
@@ -358,8 +358,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoLeonelaGris.jpeg',
         img2: '/img/Productos/ConjuntoLeonelaGris2.jpeg',
         Color: 'Gris',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],   
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],   
         precio: 6499
     },
     {
@@ -370,8 +370,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoMartinCeleste.jpeg',
         img2: '/img/Productos/ConjuntoMartinCeleste2.jpeg',
         Color: 'Celeste',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],   
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],   
         precio: 5699
     },
     {
@@ -382,8 +382,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoMartinNatural.jpeg',
         img2: '/img/Productos/ConjuntoMartinNatural2.jpeg',
         Color: 'Natural',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],   
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],   
         precio: 5699
     },
     {
@@ -397,8 +397,8 @@ const productosGenerales = [
         img:  '/img/Productos/ConjuntoMomsCentolla.jpeg',
         img2: '/img/Productos/ConjuntoMomsCentolla2.jpeg',
         Color: 'Centolla',
-        categoria: ['Conjuntos'],
-        busqueda: ['Conjuto', 'remera', 'short'],   
+        categoria: ['conjuntos'],
+        busqueda: ['conjuto', 'remera', 'short'],   
         precio: 5499 
     },
 ]
@@ -411,6 +411,17 @@ let spanCart = document.querySelector('.spanCart');
 let spanCartMobile = document.querySelector('.circleCart');
 const tbodyCarrito = document.querySelector('.tbodyCarrito');
 const rowProducts = document.querySelector('.rowProducts');
+const buttonFilter = document.querySelector('.buttonFilter');
+const busquedaUser = JSON.parse(localStorage.getItem('busqueda')) || [];
+const buttoSearch= document.querySelector('.buttonSearch');
+const errorFiltros = document.querySelector('.errorFiltros');
+let checkedTalles = [];
+let checkedCategorias = [];
+const spanLimpFiltros = document.getElementById('filtro');
+let limpiFiltros = document.querySelector('.limpiFiltros');
+const buttonFiltros = document.querySelector('.buttonFiltros');
+const panelFiltros = document.querySelector('.rowFiltros')
+
 
 // si hay productos cargados en el local storage, lo cargamos en el carrito//
 window.addEventListener('load', () => {
@@ -420,7 +431,13 @@ window.addEventListener('load', () => {
         cart(productosElegidos)
 
     }
+
     renderProductos(productosTotales)
+
+    if(busquedaUser){
+
+        filtrarProductos(checkedTalles, checkedCategorias, busquedaUser)
+    }
     renderTalles(productosTotales)
     renderCategorias(productosTotales)
 })
@@ -530,8 +547,9 @@ document.addEventListener('click', (event) => {
 })
 
 //funcion para renderizar los productos //
-const renderProductos = productosTotales => {
-    productosTotales.forEach(producto => {
+const renderProductos = productos => {
+    rowProducts.innerHTML=""
+    productos.forEach(producto => {
         
     const divCol = document.createElement('div');
     divCol.classList.add('col-sm-6','col-md-4','col-lg-2','img1','d-flex','justify-content-center','aling-items-center','flex-column')
@@ -557,7 +575,7 @@ const renderProductos = productosTotales => {
     divCol.innerHTML=contenido;
     rowProducts.appendChild(divCol)
 
-    imgHover(productosTotales)
+    imgHover(productos)
     })
 }
 
@@ -602,14 +620,12 @@ const renderTalles = productosTotales => {
     talles.forEach(talle => {
         const divTalles = document.createElement('div')
         divTalles.classList.add('divFiltros')
-        const checkFiltro = document.createElement('input')
-        checkFiltro.type='checkbox'
 
-        const labelFiltro = document.createElement('label')
-        labelFiltro.innerHTML=`${talle}`
-        
-        divTalles.appendChild(checkFiltro)
-        divTalles.appendChild(labelFiltro)
+        let contenidoDiv = `
+        <input class="checkTalles" type="checkbox" name="filtrar" id="">
+        <label for="filtrar">${talle}</label>
+        `
+        divTalles.innerHTML=contenidoDiv
         contFiltrosTalles.appendChild(divTalles)
     })
 }
@@ -631,14 +647,207 @@ const renderCategorias = productosTotales => {
     categorias.forEach(categoria => {
         const divCategorias = document.createElement('div')
         divCategorias.classList.add('divFiltros')
-        const checkCategorias = document.createElement('input')
-        checkCategorias.type='checkbox'
 
-        const labelCategorias = document.createElement('label')
-        labelCategorias.innerHTML=`${categoria}`
-        
-        divCategorias.appendChild(checkCategorias)
-        divCategorias.appendChild(labelCategorias)
+        let contenidoDiv = `
+        <input class="checkCategorias" type="checkbox" name="filtrar" id="">
+        <label for="filtrar">${categoria}</label>
+        `
+        divCategorias.innerHTML=contenidoDiv
         contFiltrosCategorias.appendChild(divCategorias)
     })
 }
+
+// funcion para extraer los filtros seleccionados //
+buttonFilter.addEventListener('click', () => {  
+    const checkTalles = document.querySelectorAll('.checkTalles')
+    const checkCategorias = document.querySelectorAll('.checkCategorias')
+
+
+    for(check of checkTalles){
+        if(check.checked){
+            checkedTalles.push(check.nextElementSibling.innerHTML)
+        }
+    }
+
+    for(check of checkCategorias){
+        if(check.checked){
+            let valueCat = check.nextElementSibling.innerHTML;
+            if(!checkedCategorias.includes(valueCat)){
+                checkedCategorias.push(valueCat)
+            }
+        }
+    }
+    
+
+    if(checkedTalles.length === 0 && checkedCategorias.length === 0){
+        errorFiltros.innerHTML='No seleccionaste ningun filtro'
+        error(errorFiltros)
+        return
+    }
+    
+
+    limpiFiltros.style.display='flex'
+    filtrarProductos(checkedTalles, checkedCategorias, busquedaUser)
+})
+
+// funcion para filtrar //
+const filtrarProductos = (checkedtalles, checkedCategorias, busqueda) => {
+    const productosFiltrados = [];
+    let productosFiltradosFinal = [];
+
+    // si ningun array trae nada, mostramos todos los productos//
+    if(checkedtalles.length === 0 && checkedCategorias.length === 0 && busqueda.length === 0){
+        renderProductos(productosTotales)
+        return
+    }
+
+    // si solamente hay algo en talles, filtramos solo por talle//
+    if(checkedtalles.length > 0 && checkedCategorias.length === 0 && busqueda.length === 0){
+        checkedtalles.forEach(talle => {
+            for(item of productosTotales){
+                talle.toLowerCase();
+    
+                if(Object.keys(item.tallesYStock).includes(talle)){
+                    productosFiltrados.push(item)
+                }
+            }
+            
+        })
+        for(item of productosFiltrados){
+            if(!productosFiltradosFinal.includes(item)){
+                productosFiltradosFinal.push(item)
+            }
+        }
+        renderProductos(productosFiltradosFinal)
+        panelFiltros.classList.remove('displayF')
+        rowProducts.classList.remove('displayN')
+        checkedTalles = [];
+        checkedCategorias = [];
+
+    // si solamente hay algo en categorias, filtramos solo por categoria//
+    } else if (checkedtalles.length === 0 && checkedCategorias.length > 0 && busqueda.length === 0){
+        checkedCategorias.forEach(categoria => {
+            for(item of productosTotales){
+                categoria.toLowerCase();
+    
+                if(item.categoria.includes(categoria)){
+                    productosFiltrados.push(item)
+                }
+            }
+            for(producto of productosFiltrados){
+                if(!productosFiltradosFinal.includes(producto)){
+                    productosFiltradosFinal.push(producto)
+                }
+            }
+            renderProductos(productosFiltradosFinal)
+            panelFiltros.classList.remove('displayF')
+            rowProducts.classList.remove('displayN')
+            checkedTalles = [];
+            checkedCategorias = [];
+        })
+
+     // si hay algo en talles y categorias, filtramos por las 2 coincidencias //   
+    } else if (checkedtalles.length > 0 && checkedCategorias.length > 0){
+        for(item of productosTotales){
+            for(talle of checkedtalles){
+                if(Object.keys(item.tallesYStock).includes(talle)){
+                    productosFiltrados.push(item)
+                }
+            }
+        }
+
+        for(item of productosFiltrados){
+            for(categoria of checkedCategorias){
+                if(item.categoria.includes(categoria)){
+                    productosFiltradosFinal.push(item)
+                }
+            }
+        }
+        panelFiltros.classList.remove('displayF')
+        rowProducts.classList.remove('displayN')
+        checkedTalles = [];
+        checkedCategorias = [];
+    }
+
+    // si hay solo en las busquedas, filtramos por busqueda //
+    if(checkedtalles.length === 0 && checkedCategorias.length === 0 && busqueda.length > 0){
+        for(item of productosTotales){
+            for(palabra of item.busqueda){
+                if(palabra.includes(busqueda[0])){
+                    productosFiltrados.push(item)
+                }
+            }
+        }
+        for(producto of productosFiltrados){
+            if(!productosFiltradosFinal.includes(producto)){
+                productosFiltradosFinal.push(producto)
+                renderProductos(productosFiltradosFinal)
+                limpiFiltros.style.display='flex'
+                panelFiltros.classList.remove('displayF')
+                rowProducts.classList.remove('displayN')
+            }
+        }
+        localStorage.removeItem('busqueda')
+    }
+
+    if(productosFiltradosFinal.length === 0){
+        errorFiltros.innerHTML="No hay coincidencia en las busquedas"
+        error(errorFiltros)
+    } else {
+        renderProductos(productosFiltradosFinal)
+        checkedTalles = [];
+        checkedCategorias = [];
+
+    }
+
+}
+
+// evento para el input de busqueda //
+buttoSearch.addEventListener('click', ()=>{
+    const inputBusqueda = document.querySelector('.search').value
+    
+    if(!inputBusqueda){
+        errorFiltros.innerHTML='Por favor ingresa una busqueda'
+        error(errorFiltros)
+        return
+    }
+
+    const busqueda = [inputBusqueda]
+    filtrarProductos(checkedTalles, checkedCategorias, busqueda)
+    
+})
+
+// funcion para alerta de errores //
+const error = errorFiltro => {
+    errorFiltros.style.display='inline-block'
+    setTimeout(() => {
+        errorFiltros.style.display='none'
+    }, 2000);
+}
+
+// funcion para borrar los filtros seleccionados //
+spanLimpFiltros.addEventListener('click', () => {
+    const checkTalles = document.querySelectorAll('.checkTalles')
+    const checkCategorias = document.querySelectorAll('.checkCategorias')
+    let inputBusqueda = document.querySelector('.search')
+
+    for(check of checkTalles){
+        check.checked=false
+    }
+    for(check of checkCategorias){
+        check.checked=false
+    }
+    inputBusqueda.value=""
+    checkedTalles = [];
+    checkedCategorias = [];
+
+    limpiFiltros.style.display='none'
+    renderProductos(productosTotales)
+})
+
+// evento para el boton de filtros mobile //
+buttonFiltros.addEventListener('click', () => {
+
+    panelFiltros.classList.toggle('displayF')
+    rowProducts.classList.toggle('displayN')
+})

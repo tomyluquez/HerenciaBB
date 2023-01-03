@@ -179,6 +179,28 @@ th, td{
 }
 
 /* ESTILOS INDIVIDUALES */
+.limpiFiltros{
+    position: absolute;
+    width: 160px !important;
+    left: 50%;
+    top: 11%;
+    background-color: var(--fondoHerencia);
+    text-align: center;
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    display: none;
+    transition: all 0.4s ease;
+}
+
+.bi.bi-x.filtro{
+    top: 2px;
+    right: 2px;
+    bottom: 0;
+}
+
 .rowFiltros h5{
     align-self: center;
 }
@@ -409,6 +431,7 @@ h5{
 }
 
 /* HOVER */
+
 .bi-x:hover,
 .eliminar:hover{
     background-color: var(--blanco);
@@ -652,7 +675,16 @@ ul li a:hover{
     .rowFiltros{
         width: 100vw;
         align-items: center;
+        margin-top: 20px;
         display: none;
+        z-index: 800;
+    }
+
+    .displayF{
+        display: flex;
+    }
+    .displayN{
+        display: none !important
     }
 
     .cont-filtros-talles{
@@ -661,6 +693,15 @@ ul li a:hover{
 
     .buttonFiltros{
         display: block;
+    }
+
+    .limpiFiltros{
+        top: 70px;
+        left: 32%;
+    }
+    
+    .row.rowProducts{
+        margin-top: 50px;
     }
 }
 
