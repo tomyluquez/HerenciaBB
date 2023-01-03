@@ -6,8 +6,9 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         tallesYStock:{
             'Unico': 2
         },
-        img: '/img/Productos/BaberoconToalla2.jpeg',
-        categoria: ['accesorios y otros'],
+        img:  '/img/Productos/BaberoconToalla.jpeg',
+        img2: '/img/Productos/BaberoconToalla2.jpeg',
+        categoria: ['Accesorios y Otros'],
         busqueda: ['babero', 'accesorios','babitas'],
         precio: 1549
     },
@@ -19,7 +20,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         color: 'Blanco',
         img: '/img/Productos/BodyconVestido4.jpeg',
-        categoria: ['body', 'vestido'],
+        img2: '/img/Productos/BodyconVestido2.jpeg',
+        categoria: ['Bodys', 'Vestidos'],
         busqueda: ['body','vestido', 'nenas'],
         precio: 5699
     },
@@ -31,7 +33,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         color: 'Beige',
         img:'/img/Productos/BodyLinoBeige.jpeg',
-        categoria: ['body'],
+        img2:'/img/Productos/BodyLinoBeige3.jpeg',
+        categoria: ['Bodys'],
         busqueda:['body','lino'],
         precio: 4699
     },
@@ -43,7 +46,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         color: 'Leoncitos',
         img: '/img/Productos/CRN-Leoncitos2.jpeg',
-        categoria: ['conjuntos'],
+        img2: '/img/Productos/CRN-Leoncitos.jpeg',
+        categoria: ['Conjuntos'],
         busqueda: ['conjuntos', 'recien nacidos',],
         precio: 4399
     },
@@ -55,7 +59,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         color: 'Azul',
         img: '/img/Productos/RemeraLinoAzulRayado.jpeg',
-        categoria:['remeras'],
+        img2: '/img/Productos/RemeraLinoAzulRayado2.jpeg',
+        categoria:['Remeras'],
         busqueda:['remeras','lino'],
         precio: 4699
     },
@@ -66,7 +71,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         color: 'Beige',
         img: '/img/Productos/RemeraLinoBeige2.jpeg',
-        categoria:['remeras'],
+        img2: '/img/Productos/RemeraLinoBeige3.jpeg',
+        categoria:['Remeras'],
         busqueda:['remeras','lino'],
         precio: 4699
     },
@@ -80,6 +86,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         color: 'Celeste',
         img: '/img/Productos/ShortWaffleCeleste.jpeg',
+        img2: '/img/Productos/ShortWaffleCeleste2.jpeg',
         categoria:['Partecitas de Abajo'],
         busqueda:['short','waffle','pantalon'],
         precio: 3099
@@ -93,6 +100,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         color: 'Hortencias',
         img: '/img/Productos/VestidoHortensias.jpeg',
+        img2: '/img/Productos/VestidoHortensias2.jpeg',
         categoria:['Vestidos'],
         busqueda:['vestidos','nena'],
         precio: 5699
@@ -133,7 +141,7 @@ buttonProducts.addEventListener('click', () => {
 
 // para cada producto que tenemos en el listado, se crea un div en la parte de compra rapida //
 productos.forEach((producto) => {
-
+    
     const divCol = document.createElement('div');
     divCol.classList.add('col-sm-6','col-md-4','col-lg-2','img1','d-flex','justify-content-center','aling-items-center','flex-column')
     const img = document.createElement('img');
@@ -175,7 +183,7 @@ productos.forEach((producto) => {
     const iconCarrito = document.createElement('i');
     iconCarrito.classList.add('bi','bi-cart-plus')
 
-    rowProducts.appendChild(divCol);
+
     divCol.appendChild(img)
     divCol.appendChild(divSpanNombre)
     divSpanNombre.appendChild(spanNombre)
@@ -191,15 +199,17 @@ productos.forEach((producto) => {
     buttonCarrito.appendChild(spanButton)
     buttonCarrito.appendChild(spanIconCarrito)
     spanIconCarrito.appendChild(iconCarrito)
-
-
+    
     for(talles in producto.tallesYStock){
-        const option = document.createElement('option');
-        option.innerHTML=talles
-        select.appendChild(option)
-        divTalles.appendChild(select)
-    }
-})  
+            const option = document.createElement('option');
+            option.innerHTML= talles
+            divTalles.appendChild(select)
+            select.appendChild(option)
+        }
+        
+        rowProducts.appendChild(divCol)
+
+})      
 
 const buttonCarrito = document.querySelectorAll('.añadirCarrito');
 
@@ -402,4 +412,27 @@ form.addEventListener('submit', (e) => {
     setTimeout(() => {
         alertForm.style.display='none'
     }, 2000);
+})
+
+//evento para cambiar de imagen al pasar el mouse //
+const imgProducts = document.querySelectorAll('.imgProducts')
+imgProducts.forEach(img => {
+
+    img.addEventListener('mousemove', () => {
+        for( item of productos ){
+            let srcImage = img.src.slice(21)
+            if(srcImage === item.img){
+                img.src = item.img2
+            }
+        }
+    })
+
+    img.addEventListener('mouseout', () => {
+        for( item of productos ){
+            let srcImage = img.src.slice(21)
+            if(srcImage === item.img2){
+                img.src = item.img
+            }
+        }
+    })
 })

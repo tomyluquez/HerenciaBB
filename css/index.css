@@ -199,21 +199,7 @@ option{
     max-height: 400px;
 }
 
-.img1,
-.img2,
-.img3,
-.img4{
-    background-color:var(--fondoHerencia);
-    border: 1px solid black;
-    margin-top: 2rem;
-    text-align: center;
-    width: 290px;
-    height: auto;
-    gap: 0.5rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    padding: 10px 10px;
-    color: var(--blanco);
-}
+
 
 .row{
     gap: 2rem;
@@ -295,18 +281,6 @@ h3{
     height: auto;
     background-color: var(--blanco)
 }
-
-/* .seeAll{
-    border-radius: 5px;
-    background-color: var(--fondoHerencia);
-    color: var(--blanco);
-    border: solid 1px var(--blanco);
-    transition: all .3s ease;
-    margin: 4rem 0;
-    height: 40px;
-    padding: 0 15px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 8px 8px;
-} */
 
 .añadirCarrito{
     border-radius: 5px;
