@@ -420,7 +420,11 @@ let checkedCategorias = [];
 const spanLimpFiltros = document.getElementById('filtro');
 let limpiFiltros = document.querySelector('.limpiFiltros');
 const buttonFiltros = document.querySelector('.buttonFiltros');
-const panelFiltros = document.querySelector('.rowFiltros')
+const panelFiltros = document.querySelector('.rowFiltros');
+const closeFiltros = document.getElementById('filtros');
+const contMenues = document.querySelector('.cont-menues');
+const contSearch = document.querySelector('.cont-search');
+const hamburguer = document.querySelector('.hamburger')
 
 
 // si hay productos cargados en el local storage, lo cargamos en el carrito//
@@ -552,7 +556,7 @@ const renderProductos = productos => {
     productos.forEach(producto => {
         
     const divCol = document.createElement('div');
-    divCol.classList.add('col-sm-6','col-md-4','col-lg-2','img1','d-flex','justify-content-center','aling-items-center','flex-column')
+    divCol.classList.add('col-sm-6','col-md-2','col-lg-2','img1','d-flex','justify-content-center','aling-items-center','flex-column')
 
     const contenido = `
       <img class="imgProducts" src="${producto.img}" alt="">
@@ -719,7 +723,7 @@ const filtrarProductos = (checkedtalles, checkedCategorias, busqueda) => {
             }
         }
         renderProductos(productosFiltradosFinal)
-        panelFiltros.classList.remove('displayF')
+        panelFiltros.classList.remove('left')
         rowProducts.classList.remove('displayN')
         checkedTalles = [];
         checkedCategorias = [];
@@ -740,7 +744,7 @@ const filtrarProductos = (checkedtalles, checkedCategorias, busqueda) => {
                 }
             }
             renderProductos(productosFiltradosFinal)
-            panelFiltros.classList.remove('displayF')
+            panelFiltros.classList.remove('left')
             rowProducts.classList.remove('displayN')
             checkedTalles = [];
             checkedCategorias = [];
@@ -763,7 +767,7 @@ const filtrarProductos = (checkedtalles, checkedCategorias, busqueda) => {
                 }
             }
         }
-        panelFiltros.classList.remove('displayF')
+        panelFiltros.classList.remove('left')
         rowProducts.classList.remove('displayN')
         checkedTalles = [];
         checkedCategorias = [];
@@ -783,7 +787,7 @@ const filtrarProductos = (checkedtalles, checkedCategorias, busqueda) => {
                 productosFiltradosFinal.push(producto)
                 renderProductos(productosFiltradosFinal)
                 limpiFiltros.style.display='flex'
-                panelFiltros.classList.remove('displayF')
+                panelFiltros.classList.remove('left')
                 rowProducts.classList.remove('displayN')
             }
         }
@@ -813,6 +817,9 @@ buttoSearch.addEventListener('click', ()=>{
     }
 
     const busqueda = [inputBusqueda]
+    contMenues.classList.remove('navBarToggle')
+    contSearch.classList.remove('searchToggle')
+    hamburguer.classList.remove('is-active')
     filtrarProductos(checkedTalles, checkedCategorias, busqueda)
     
 })
@@ -847,7 +854,14 @@ spanLimpFiltros.addEventListener('click', () => {
 
 // evento para el boton de filtros mobile //
 buttonFiltros.addEventListener('click', () => {
+    panelFiltros.classList.add('left')
+    setTimeout(() => {
+        rowProducts.classList.add('displayN')
+    }, 500);
+    
+})
 
-    panelFiltros.classList.toggle('displayF')
-    rowProducts.classList.toggle('displayN')
+closeFiltros.addEventListener('click', () => {
+    panelFiltros.classList.remove('left')
+    rowProducts.classList.remove('displayN')
 })
