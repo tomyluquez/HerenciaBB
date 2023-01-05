@@ -6,9 +6,11 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         },
         img:  '/img/Productos/BaberoconToalla.jpeg',
         img2: '/img/Productos/BaberoconToalla2.jpeg',
+        color: 'Motivos',
         categoria: ['accesorios y otros'],
         busqueda: ['babero', 'accesorios','babitas'],
-        precio: 1549
+        precio: 1549,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Body con Vestido',
@@ -21,7 +23,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         img2: '/img/Productos/BodyconVestido2.jpeg',
         categoria: ['bodys', 'vestidos'],
         busqueda: ['body','vestido', 'nenas'],
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Body lino',
@@ -34,7 +37,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         img2:'/img/Productos/BodyLinoBeige3.jpeg',
         categoria: ['bodys'],
         busqueda:['body','lino'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Leoncitos',
@@ -47,7 +51,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         img2: '/img/Productos/CRN-Leoncitos.jpeg',
         categoria: ['conjuntos'],
         busqueda: ['conjuntos', 'recien nacidos',],
-        precio: 4399
+        precio: 4399,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Remera lino Azul',
@@ -60,7 +65,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         img2: '/img/Productos/RemeraLinoAzulRayado2.jpeg',
         categoria:['remeras'],
         busqueda:['remeras','lino'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Remera lino Beige',
@@ -72,7 +78,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         img2: '/img/Productos/RemeraLinoBeige3.jpeg',
         categoria:['remeras'],
         busqueda:['remeras','lino'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Short Waflle Celeste',
@@ -87,7 +94,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         img2: '/img/Productos/ShortWaffleCeleste2.jpeg',
         categoria:['partecitas de abajo'],
         busqueda:['short','waffle','pantalon'],
-        precio: 3099
+        precio: 3099,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Vestido Hortencias',
@@ -101,7 +109,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) || [
         img2: '/img/Productos/VestidoHortensias2.jpeg',
         categoria:['vestidos'],
         busqueda:['vestidos','nena'],
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     }
 ];
 const productosElegidos = JSON.parse(localStorage.getItem('productosElegidos')) || [];
@@ -116,7 +125,8 @@ const productosGenerales = [
         color: 'Verde Kale',
         categoria: ['ajuares', 'conjuntos'],
         busqueda: ['ajuar', 'conjunto','pantalon'],
-        precio: 3749
+        precio: 3749,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Body Alemndra',
@@ -126,10 +136,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/BodyAlmendra.jpeg',
         img2: '/img/Productos/BodyAlmendra2.jpeg',
-        Color: 'Almendra',
+        color: 'Almendra',
         categoria: ['bodys'],
         busqueda: ['body', 'remera'],
-        precio: 3699
+        precio: 3699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Body Oceano',
@@ -139,10 +150,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/Bodyoceanoblanco.jpeg',
         img2: '/img/Productos/Bodyoceanoblanco2.jpeg',
-        Color: 'Celeste Oceano',
+        color: 'Celeste Oceano',
         categoria: ['bodys'],
         busqueda: ['body'],
-        precio: 3999 
+        precio: 3999,
+        descripcion: 'se venden por separado' 
     },
     {
         nombre: 'Conjunto Aventura',
@@ -152,10 +164,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjunoAventuraKale.jpeg',
         img2: '/img/Productos/ConjunoAventuraKale2.jpeg',
-        Color: 'Verde Kale',
+        color: 'Verde Kale',
         categoria: ['conjuntos'],
         busqueda: ['conjunto', 'remeras', 'short'],
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Baberos',
@@ -167,7 +180,8 @@ const productosGenerales = [
         img2: '/img/Productos/Baberos2.jpeg',
         categoria: ['accesorios y otros'],
         busqueda: ['babero', 'accesorio'],
-        precio: 1199
+        precio: 1199,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Buzo Pecas',
@@ -177,10 +191,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/BuzoPecasNatural.jpeg',
         img2: '/img/Productos/BuzoPecasNatural2.jpeg',
-        Color: 'Natural',
+        color: 'Natural',
         categoria: ['buzos'],
         busqueda: ['buzos', 'abrigos'],
-        precio: 6099
+        precio: 6099,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Buzo Pecas',
@@ -190,10 +205,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/Buzopecasceleste.jpeg',
         img2: '/img/Productos/Buzopecasceleste2.jpeg',
-        Color: 'Celeste',
+        color: 'Celeste',
         categoria: ['buzos'],
         busqueda: ['buzo', 'abrigo'],
-        precio: 6099
+        precio: 6099,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Ajuar Bajo el Mar',
@@ -203,10 +219,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/AjuarBajoelmargris.jpeg',
         img2: '/img/Productos/AjuarBajoelmargris2.jpeg',
-        Color: 'Gris',
+        color: 'Gris',
         categoria: ['ajuares'],
         busqueda: ['ajuar', 'pantalon', 'conjunto'],
-        precio: 3749
+        precio: 3749,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Arcoiris',
@@ -216,10 +233,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoArcoiris.jpeg',
         img2: '/img/Productos/ConjuntoArcoiris2.jpeg',
-        Color: 'Limon',
+        color: 'Limon',
         categoria: ['conjuntos'],
         busqueda: ['conjunto', 'remera', 'short'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Aventura',
@@ -230,10 +248,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoAventuraSky.jpeg',
         img2: '/img/Productos/ConjuntoAventuraSky2.jpeg',
-        Color: 'Celeste Sky',
+        color: 'Celeste Sky',
         categoria: ['conjuntos'],
         busqueda: ['conjunto', 'remera', 'short'],
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Bajo el Mar',
@@ -242,10 +261,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/Conjuntobajoelmarbeige.jpeg',
         img2: '/img/Productos/Conjuntobajoelmarbeige2.jpeg',
-        Color: 'Beige',
+        color: 'Beige',
         categoria: ['conjuntos'],
         busqueda: ['conjunto', 'remera', 'short'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Oceano',
@@ -255,10 +275,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoOceanoLimonada.jpeg',
         img2: '/img/Productos/ConjuntoOceanoLimonada2.jpeg',
-        Color: 'Limonada',
+        color: 'Limonada',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],
-        precio: 5199
+        precio: 5199,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Exploring',
@@ -268,10 +289,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoExploringKale.jpeg',
         img2: '/img/Productos/ConjuntoExploringKale2.jpeg',
-        Color: 'Verde Kale',
+        color: 'Verde Kale',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],
-        precio: 5499
+        precio: 5499,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Exploring',
@@ -281,10 +303,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoExploringMaiz.jpeg',
         img2: '/img/Productos/ConjuntoExploringMaiz2.jpeg',
-        Color: 'Verde Maiz',
+        color: 'Verde Maiz',
         categoria: ['conjuntos'],
         busqueda: ['Conjuto', 'remera', 'short'],
-        precio: 5499
+        precio: 5499,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Florecer',
@@ -293,10 +316,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoFlorecerGris.jpeg',
         img2: '/img/Productos/ConjuntoFlorecerGris2.jpeg',
-        Color: 'Gris',
+        color: 'Gris',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],
-        precio: 3999
+        precio: 3999,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Helena',
@@ -307,10 +331,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoHelenaCamel.jpeg',
         img2: '/img/Productos/ConjuntoHelenaCamel2.jpeg',
-        Color: 'Camel',
+        color: 'Camel',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Hippo',
@@ -321,10 +346,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoHippoKale.jpeg',
         img2: '/img/Productos/ConjuntoHippoKale2.jpeg',
-        Color: 'Verde Kale',
+        color: 'Verde Kale',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],   
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Hippo',
@@ -333,10 +359,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoHippoSky.jpeg',
         img2: '/img/Productos/ConjuntoHippoSky2.jpeg',
-        Color: 'Verde Sky',
+        color: 'Verde Sky',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],   
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Leonela',
@@ -345,10 +372,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoLeonelaBeige.jpeg',
         img2: '/img/Productos/ConjuntoLeonelaBeige2.jpeg',
-        Color: 'Beige',
+        color: 'Beige',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],   
-        precio: 6499
+        precio: 6499,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Leonela',
@@ -357,10 +385,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoLeonelaGris.jpeg',
         img2: '/img/Productos/ConjuntoLeonelaGris2.jpeg',
-        Color: 'Gris',
+        color: 'Gris',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],   
-        precio: 6499
+        precio: 6499,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Martin',
@@ -369,10 +398,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoMartinCeleste.jpeg',
         img2: '/img/Productos/ConjuntoMartinCeleste2.jpeg',
-        Color: 'Celeste',
+        color: 'Celeste',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],   
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Martin',
@@ -381,10 +411,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoMartinNatural.jpeg',
         img2: '/img/Productos/ConjuntoMartinNatural2.jpeg',
-        Color: 'Natural',
+        color: 'Natural',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],   
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Moms',
@@ -396,10 +427,11 @@ const productosGenerales = [
         },
         img:  '/img/Productos/ConjuntoMomsCentolla.jpeg',
         img2: '/img/Productos/ConjuntoMomsCentolla2.jpeg',
-        Color: 'Centolla',
+        color: 'Centolla',
         categoria: ['conjuntos'],
         busqueda: ['conjuto', 'remera', 'short'],   
-        precio: 5499 
+        precio: 5499,
+        descripcion: 'se venden por separado' 
     },
 ]
 const productosTotales = [...productos,...productosGenerales]
@@ -424,7 +456,8 @@ const panelFiltros = document.querySelector('.rowFiltros');
 const closeFiltros = document.getElementById('filtros');
 const contMenues = document.querySelector('.cont-menues');
 const contSearch = document.querySelector('.cont-search');
-const hamburguer = document.querySelector('.hamburger')
+const hamburguer = document.querySelector('.hamburger');
+const productsInd = document.querySelector('.productsInd')
 
 
 // si hay productos cargados en el local storage, lo cargamos en el carrito//
@@ -437,6 +470,7 @@ window.addEventListener('load', () => {
     }
 
     renderProductos(productosTotales)
+
 
     if(busquedaUser){
 
@@ -561,13 +595,13 @@ const renderProductos = productos => {
     const contenido = `
       <img class="imgProducts" src="${producto.img}" alt="">
       <div class="row">
-        <span>${producto.nombre}</span>
+        <span class="spanNombre">${producto.nombre}</span>
       </div>
           <div class="row precios">
             <span class="precio">Precio $${producto.precio}</span>
           </div>
           <div class="d-flex justify-content-center aling-items-center">
-            <button class="añadirCarrito">
+            <button class="añadirCarrito" onclick="clickButton(this.closest('.img1'))">
               <span class="spanButton">Ver Producto</span>
               <span class="iconCart">
                 <i class="bi bi-arrow-right"></i>
@@ -865,3 +899,21 @@ closeFiltros.addEventListener('click', () => {
     panelFiltros.classList.remove('left')
     rowProducts.classList.remove('displayN')
 })
+
+const clickButton = (producto) => {
+    for(item of productosTotales){
+        let srcImage = producto.children[0].src.slice(21)
+        if(item.nombre === producto.children[1].innerText &&
+           item.img === srcImage){
+            console.log(producto.children)
+            productosIndividuales(item)
+        }
+    }
+} 
+
+const productosIndividuales = producto => {
+    localStorage.setItem('productoElegido', JSON.stringify(producto))
+    localStorage.setItem('productosTotales', JSON.stringify(productosTotales))
+    localStorage.setItem('productos', JSON.stringify(productos))
+    document.location='individual.html'
+  }

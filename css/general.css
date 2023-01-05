@@ -180,7 +180,88 @@ th, td{
     height: auto;
 }
 
+.imgPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgSecundarias{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.detallesProduc{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: -200px;
+    margin-top: 80px;
+    color: var(--fondoHerencia)
+}
+
+.cont-general{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.prod{
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+.cantidades.prod input{
+    border: 1px solid var(--fondoHerencia)
+}
+
 /* ESTILOS INDIVIDUALES */
+.nombreProd{
+    margin: 0;
+}
+
+.detallesProduc button{
+    width: 70%;
+}
+
+.stock{
+    background-color: var(--fondoHerencia);
+    color: var(--blanco);
+    border-radius: 3px;
+    padding: 5px;
+    display: none;
+}
+
+.imgPrincipal img{
+    width: 400px;
+    height: 400px;
+    aspect-ratio: 2/6;
+    cursor: pointer;
+    border: 4px solid var(--fondoHerencia);
+}
+
+.imgSecundarias img{
+    width: 120px;
+    cursor: pointer;
+    border: 4px solid var(--fondoHerencia);
+}
+
+.precioProd{
+    margin: 0;
+    background-color: var(--fondoHerencia);
+    color: var(--blanco);
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
 .limpiFiltros{
     position: absolute;
     width: 160px !important;

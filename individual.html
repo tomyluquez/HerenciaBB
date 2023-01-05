@@ -21,7 +21,7 @@
     <div class="alert alert-success whatsAlert" role="alert">
       Escribinos! →
     </div>
-    <div class="alert alert-success cartAlert" role="alert">
+    <div id="cartAlert" class="alert alert-success cartAlert" role="alert">
       <span>Se ha agergado el producto exitosamente</span>
     </div>
     <div class="alert alert-danger cartAlert errorStock" role="alert">
@@ -98,6 +98,43 @@
       </nav>
 <div class="container-fliud productosTotales">
     <div class="row productsInd d-flex justify-content-center aling-items-center">
+      <div class="col-md-6">
+        <div class="imgPrincipal">
+          <img class="imgPrin" src="/img/carrusell1.png" alt="">
+        </div>
+        <div class="imgSecundarias">
+          <img class="img2" src="/img/carrusellCel1.jpeg" alt="" onclick="renderImg(this.src)">
+          <img class="img3" src="/img/carrusellCel2.png" alt="" onclick="renderImg(this.src)">
+          <img class="img4" src="/img/carrusellCel2.png" alt="" onclick="renderImg(this.src)">
+        </div>
+      </div>
+      <div class="col-md-4 detallesProduc">
+        <h3 class="nombreProd"></h3>
+        <h2 class="precioProd">$15.000</h2>
+          <div class="cont-general">
+            <span class="tarjeta"></span>
+            <span class="descuento">15% off pago en Eft / Transferencia</span>
+            <span class="color"></span>
+              <div class="talles prod">
+                <label for="talles">Talles:</label>
+                <select class="selectTalles" name="talles" id="">
+                  <option value="Seleccione un Talle">Seleccione un Talle</option>
+                </select>
+              </div>
+            <span class="stock"></span>
+            <div class="cantidades prod">
+              <label for="cantidades">Cantidad</label>
+              <input type="text">
+            </div>
+          </div>
+        <button class="añadirCarrito buttonCart" onclick="clickButton(this.closest('.productsInd'))">
+          <span class="spanButton">Agregar al Carrito</span>
+          <span class="iconCart">
+            <i class="bi bi-cart-plus"></i>
+          </span>
+        </button>
+        <span class="descripcion"></span>
+      </div>
     </div>
 </div>
 
@@ -109,5 +146,5 @@
 
 
       <script src="/js/main.js"></script>
-      <script src="/js/productos.js"></script>
+      <script src="/js/individual.js"></script>
     </head>

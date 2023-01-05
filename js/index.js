@@ -10,9 +10,11 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         },
         img:  '/img/Productos/BaberoconToalla.jpeg',
         img2: '/img/Productos/BaberoconToalla2.jpeg',
+        color: 'motivos',
         categoria: ['accesorios y otros'],
         busqueda: ['babero', 'accesorios','babitas'],
-        precio: 1549
+        precio: 1549,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Body con Vestido',
@@ -25,7 +27,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         img2: '/img/Productos/BodyconVestido2.jpeg',
         categoria: ['bodys', 'vestidos'],
         busqueda: ['body','vestido', 'nenas'],
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Body lino',
@@ -38,7 +41,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         img2:'/img/Productos/BodyLinoBeige3.jpeg',
         categoria: ['bodys'],
         busqueda:['body','lino'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Conjunto Leoncitos',
@@ -51,7 +55,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         img2: '/img/Productos/CRN-Leoncitos.jpeg',
         categoria: ['conjuntos'],
         busqueda: ['conjuntos', 'recien nacidos',],
-        precio: 4399
+        precio: 4399,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Remera lino Azul',
@@ -64,7 +69,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         img2: '/img/Productos/RemeraLinoAzulRayado2.jpeg',
         categoria:['remeras'],
         busqueda:['remeras','lino'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Remera lino Beige',
@@ -76,7 +82,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         img2: '/img/Productos/RemeraLinoBeige3.jpeg',
         categoria:['remeras'],
         busqueda:['remeras','lino'],
-        precio: 4699
+        precio: 4699,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Short Waflle Celeste',
@@ -91,7 +98,8 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         img2: '/img/Productos/ShortWaffleCeleste2.jpeg',
         categoria:['partecitas de abajo'],
         busqueda:['short','waffle','pantalon'],
-        precio: 3099
+        precio: 3099,
+        descripcion: 'se venden por separado'
     },
     {
         nombre: 'Vestido Hortencias',
@@ -105,9 +113,11 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         img2: '/img/Productos/VestidoHortensias2.jpeg',
         categoria:['vestidos'],
         busqueda:['vestidos','nena'],
-        precio: 5699
+        precio: 5699,
+        descripcion: 'se venden por separado'
     }
 ];
+console.log(productos)
 window.addEventListener('load', () => {
 
     // si hay productos cargados en el local storage, lo cargamos en el carrito y //
