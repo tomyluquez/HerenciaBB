@@ -601,7 +601,7 @@ const renderProductos = productos => {
             <span class="precio">Precio $${producto.precio}</span>
           </div>
           <div class="d-flex justify-content-center aling-items-center">
-            <button class="añadirCarrito" onclick="clickButton(this)">
+            <button class="añadirCarrito buttonProductos">
               <span class="spanButton">Ver Producto</span>
               <span class="iconCart">
                 <i class="bi bi-arrow-right"></i>
@@ -614,6 +614,14 @@ const renderProductos = productos => {
     rowProducts.appendChild(divCol)
 
     imgHover(productos)
+
+    let buttonProductos = document.querySelectorAll('.buttonProductos')
+
+    buttonProductos.forEach(button => {
+        button.addEventListener('click', () => {
+            clickButton(button)
+        })
+    })
     })
 }
 
@@ -900,13 +908,13 @@ closeFiltros.addEventListener('click', () => {
     rowProducts.classList.remove('displayN')
 })
 
-const clickButton = (producto) => {
-
-    let div = producto.closest('.img1')
+const clickButton = (button) => {
+    let divButton = button.closest('.img1')
     for(item of productosTotales){
-        let srcImage = div.children[0].src.slice(21)
-        if(item.nombre === div.children[1].innerText &&
+        let srcImage = divButton.children[0].src.slice(21)
+        if(item.nombre === divButton.children[1].innerText &&
            item.img === srcImage){
+
             productosIndividuales(item)
         }
     }
