@@ -616,10 +616,11 @@ const renderProductos = productos => {
     imgHover(productos)
 
     let buttonProductos = document.querySelectorAll('.buttonProductos')
+    let divButton = document.querySelector('.img1')
 
     buttonProductos.forEach(button => {
         button.addEventListener('click', () => {
-            clickButton(button)
+            clickButton(divButton)
         })
     })
     })
@@ -908,8 +909,8 @@ closeFiltros.addEventListener('click', () => {
     rowProducts.classList.remove('displayN')
 })
 
-const clickButton = (button) => {
-    let divButton = button.closest('.img1')
+const clickButton = (divButton) => {
+    
     for(item of productosTotales){
         let srcImage = divButton.children[0].src.slice(21)
         if(item.nombre === divButton.children[1].innerText &&
