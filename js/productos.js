@@ -620,7 +620,8 @@ const renderProductos = productos => {
 
     buttonProductos.forEach(button => {
         button.addEventListener('click', () => {
-            clickButton(divButton)
+            // clickButton(divButton)
+            alert(button)
         })
     })
     })
