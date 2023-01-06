@@ -862,6 +862,10 @@ ul li a:hover{
         align-items: center;
     }
 
+    .productosTotales.individuales{
+        margin-top: 70px;
+    }
+
     #filtros{
         right: 20px;
         top: 10px;
