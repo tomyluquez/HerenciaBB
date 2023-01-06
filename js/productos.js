@@ -905,7 +905,7 @@ const clickButton = (producto) => {
         let srcImage = producto.children[0].src.slice(21)
         if(item.nombre === producto.children[1].innerText &&
            item.img === srcImage){
-            console.log(producto.children)
+
             productosIndividuales(item)
         }
     }

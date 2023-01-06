@@ -60,7 +60,9 @@ const cart = productosElegidos => {
 
    carritoComprasTabla(productosElegidos)
 }
+
 const stockActual = (selecTalles, producto) => {
+  
   
   selecTalles.addEventListener('change', function() {
       for(option of selecTalles.children){
@@ -95,7 +97,6 @@ const stockActual = (selecTalles, producto) => {
 }
 // funcion para renderizar los productos individuales //
 const renderProductos = producto => {
-  console.log(producto)
 
   imgPrincipal.src = producto.img
   img2.src = producto.img
@@ -112,11 +113,10 @@ const renderProductos = producto => {
     selectTalles.appendChild(option)
   }
 
-  console.log(selectTalles.def)
-
   stockActual(selectTalles, producto)
 
 }
+
 const producto = JSON.parse(localStorage.getItem('productoElegido'))
 renderProductos(producto)
 
@@ -134,7 +134,7 @@ const clickButton = (producto) => {
       talleselected = option.innerHTML
     }
   }
-  console.log(producto.children)
+
   const productoElegido = {
     img: srcImage.slice(21),
     nombre: producto.children[1].children[0].innerHTML,
@@ -147,6 +147,7 @@ const clickButton = (producto) => {
 
 // llamamos a la funcion que controla de que haya stock suficiente de ese producto y dejamos en blanco el value de las cantidades//
 checkStock(productoElegido)
+producto.children[1].children[2].children[5].children[1].value = ""
 }
 
 // funcion para chequear el stock disponible //
@@ -172,6 +173,7 @@ const checkStock = productoElegido => {
               createItemCart(productoElegido)
               console.log(productos)
               //enviamos al locl storage, el stock acutalizado //
+              
               localStorage.setItem('productos', JSON.stringify(productos))
               localStorage.setItem('productosTotales', JSON.stringify(productosTotales))
               
@@ -198,7 +200,6 @@ const alertExito = () => {
 
 // funcion para crear el objeto de cada producto seleccionado //
 const createItemCart = productoElegido =>{
-  console.log(productoElegido)
   //comprobamos de que si el producto se repite que nos sume una cantidad mas para evitar duplicados //
   for(let i=0; i<productosElegidos.length; i++){
       if(productosElegidos[i].nombre === productoElegido.nombre &&

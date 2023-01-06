@@ -1,5 +1,4 @@
 
-
 const productosElegidos = JSON.parse(localStorage.getItem('productosElegidos')) || [];
 const productos = JSON.parse(localStorage.getItem('productos')) || 
 [
@@ -119,6 +118,16 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
 ];
 console.log(productos)
 window.addEventListener('load', () => {
+
+    let userActive = JSON.parse(localStorage.getItem('userActive')) || [];
+    console.log(userActive)
+
+    if(userActive.length > 0){
+        let spanUser = document.querySelector('.bienvenido')
+
+        spanUser.innerHTML= `Bienvenid@ ${userActive[0].name}`
+        spanUser.style.display='flex'
+    }
 
     // si hay productos cargados en el local storage, lo cargamos en el carrito y //
     //tiramos la alerta para que terminen la compra //
