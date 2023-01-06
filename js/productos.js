@@ -915,5 +915,5 @@ const productosIndividuales = producto => {
     localStorage.setItem('productoElegido', JSON.stringify(producto))
     localStorage.setItem('productosTotales', JSON.stringify(productosTotales))
     localStorage.setItem('productos', JSON.stringify(productos))
-    location.href = "../individual.html"
+    location.href = "https://herencia-bb.vercel.app/individual.html"
   }
