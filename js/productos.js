@@ -601,7 +601,7 @@ const renderProductos = productos => {
             <span class="precio">Precio $${producto.precio}</span>
           </div>
           <div class="d-flex justify-content-center aling-items-center">
-            <button class="añadirCarrito" onclick="clickButton(this.closest('.img1'))">
+            <button class="añadirCarrito" onclick="clickButton(this)">
               <span class="spanButton">Ver Producto</span>
               <span class="iconCart">
                 <i class="bi bi-arrow-right"></i>
@@ -901,11 +901,12 @@ closeFiltros.addEventListener('click', () => {
 })
 
 const clickButton = (producto) => {
-    for(item of productosTotales){
-        let srcImage = producto.children[0].src.slice(21)
-        if(item.nombre === producto.children[1].innerText &&
-           item.img === srcImage){
 
+    let div = producto.closest('.img1')
+    for(item of productosTotales){
+        let srcImage = div.children[0].src.slice(21)
+        if(item.nombre === div.children[1].innerText &&
+           item.img === srcImage){
             productosIndividuales(item)
         }
     }
@@ -915,5 +916,5 @@ const productosIndividuales = producto => {
     localStorage.setItem('productoElegido', JSON.stringify(producto))
     localStorage.setItem('productosTotales', JSON.stringify(productosTotales))
     localStorage.setItem('productos', JSON.stringify(productos))
-    location.href = "https://herencia-bb.vercel.app/individual.html"
+    document.location='individual.html'
   }
