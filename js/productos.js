@@ -915,5 +915,5 @@ const productosIndividuales = producto => {
     localStorage.setItem('productoElegido', JSON.stringify(producto))
     localStorage.setItem('productosTotales', JSON.stringify(productosTotales))
     localStorage.setItem('productos', JSON.stringify(productos))
-    document.location='individual.html'
+    location.href = "../individual.html"
   }
