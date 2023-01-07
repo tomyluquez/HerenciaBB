@@ -601,7 +601,7 @@ const renderProductos = productos => {
             <span class="precio">Precio $${producto.precio}</span>
           </div>
           <div class="d-flex justify-content-center aling-items-center">
-            <button class="añadirCarrito buttonProductos">
+            <button class="añadirCarrito buttonProductos" onclick="clickButton(this.closest('.img1'))">
               <span class="spanButton">Ver Producto</span>
               <span class="iconCart">
                 <i class="bi bi-arrow-right"></i>
@@ -615,15 +615,7 @@ const renderProductos = productos => {
 
     imgHover(productos)
 
-    let buttonProductos = document.querySelectorAll('.buttonProductos')
-    let divButton = document.querySelector('.img1')
 
-    buttonProductos.forEach(button => {
-        button.addEventListener('click', () => {
-            // clickButton(divButton)
-            alert(button)
-        })
-    })
     })
 }
 
@@ -910,7 +902,7 @@ closeFiltros.addEventListener('click', () => {
     rowProducts.classList.remove('displayN')
 })
 
-const clickButton = (divButton) => {
+function clickButton(divButton){
     
     for(item of productosTotales){
         let srcImage = divButton.children[0].src.slice(21)
@@ -922,9 +914,11 @@ const clickButton = (divButton) => {
     }
 } 
 
-const productosIndividuales = producto => {
+function productosIndividuales(producto){
+
     localStorage.setItem('productoElegido', JSON.stringify(producto))
     localStorage.setItem('productosTotales', JSON.stringify(productosTotales))
     localStorage.setItem('productos', JSON.stringify(productos))
     document.location='individual.html'
+    
   }
