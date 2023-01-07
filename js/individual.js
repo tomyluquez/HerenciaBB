@@ -22,7 +22,7 @@ let spanCartMobile = document.querySelector('.circleCart');
 const cartAlert = document.getElementById('cartAlert');
 
 window.addEventListener('load', () => {
-  //tiramos la alerta para que terminen la compra //
+  
   if(productosElegidos.length > 0){
 
       cart(productosElegidos)
@@ -61,6 +61,7 @@ const cart = productosElegidos => {
    carritoComprasTabla(productosElegidos)
 }
 
+// funcion para comprobar cuando seleccionamos un talle del select si hay stock de ese talle //
 const stockActual = (selecTalles, producto) => {
   
   
@@ -120,11 +121,13 @@ const renderProductos = producto => {
 const producto = JSON.parse(localStorage.getItem('productoElegido'))
 renderProductos(producto)
 
+// funcion para cambiar el src de la imagen principal al hacer click en la que quieras ver //
 const renderImg = src => {
   const imgPrincipal = document.querySelector('.imgPrin');
   imgPrincipal.src = src
 }
 
+// funcion para cuando seleccionamos el prodcuto y apretamos el boton de agregar al carrito //
 const clickButton = (producto) => {
   const srcImage = producto.children[0].childNodes[1].children[0].src
   let talleselect = producto.children[1].children[2].children[3].children[1]

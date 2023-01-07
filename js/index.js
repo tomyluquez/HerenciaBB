@@ -116,7 +116,7 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
         descripcion: 'se venden por separado'
     }
 ];
-console.log(productos)
+
 window.addEventListener('load', () => {
 
     let userActive = JSON.parse(localStorage.getItem('userActive')) || [];

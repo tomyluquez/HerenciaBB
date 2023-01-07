@@ -465,13 +465,21 @@ window.addEventListener('load', () => {
     //tiramos la alerta para que terminen la compra //
     if(productosElegidos.length > 0){
 
+        const finishAlert = document.getElementById('finishAlert');
+
+        finishAlert.style.display='inline-block'
+        setTimeout(() => {
+            finishAlert.style.display='none'
+        }, 3000);
+
+
         cart(productosElegidos)
 
     }
 
     renderProductos(productosTotales)
 
-
+    // si tenemos alguna busqueda del usuario en el localstorage, filtramos los productos
     if(busquedaUser){
 
         filtrarProductos(checkedTalles, checkedCategorias, busquedaUser)
@@ -897,11 +905,13 @@ buttonFiltros.addEventListener('click', () => {
     
 })
 
+// evento para cerrar el panel de filtros mobile //
 closeFiltros.addEventListener('click', () => {
     panelFiltros.classList.remove('left')
     rowProducts.classList.remove('displayN')
 })
 
+// evento para el boton de cada producto //
 function clickButton(divButton){
     
     for(item of productosTotales){
@@ -914,11 +924,12 @@ function clickButton(divButton){
     }
 } 
 
+// guardamos los produtos en el local storage y creamos la pagina nueva del producto seleccionado
 function productosIndividuales(producto){
 
     localStorage.setItem('productoElegido', JSON.stringify(producto))
     localStorage.setItem('productosTotales', JSON.stringify(productosTotales))
     localStorage.setItem('productos', JSON.stringify(productos))
     document.location='individual.html'
-    
+
   }
