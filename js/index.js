@@ -120,10 +120,18 @@ const productos = JSON.parse(localStorage.getItem('productos')) ||
 window.addEventListener('load', () => {
 
     let userActive = JSON.parse(localStorage.getItem('userActive')) || [];
-    console.log(userActive)
 
     if(userActive.length > 0){
         let spanUser = document.querySelector('.bienvenido')
+        let loggin = document.querySelector('.logginLi');
+        let logOut = document.querySelector('.logOut')
+
+        loggin.style.display='none'
+        logOut.style.display='flex'
+
+        logOut.addEventListener('click', ()=> {
+            localStorage.removeItem('userActive')
+        })
 
         spanUser.innerHTML= `Bienvenid@ ${userActive[0].name}`
         spanUser.style.display='flex'
@@ -170,7 +178,7 @@ productos.forEach((producto) => {
     img.src=producto.img
     img.classList.add('imgProducts')
     const divSpanNombre = document.createElement('div');
-    divSpanNombre.classList.add('row');
+    divSpanNombre.classList.add('row','nameProduct');
     const spanNombre = document.createElement('span');
     spanNombre.innerHTML = producto.nombre
     const divSpanTalles = document.createElement('div');
@@ -275,9 +283,9 @@ buttonCarrito.forEach((button) => {
     button.addEventListener('click', () => {
 
         // para cada boton, comprobamos de que se haya ingresado algun monto en las cantidades, si es un false, larga un error //
-        if(!+button.closest('.img1').childNodes[4].lastChild.value){
+        if(+button.closest('.img1').childNodes[4].lastChild.value <= 0){
             let errorStock = document.querySelector('.errorStock')
-            errorStock.innerText = 'no ingresaste ninguna cantidad'
+            errorStock.innerText = 'Por favor ingresa una cantidad valida'
             errorStock.style.display='inline-block'
             setTimeout(() => {
                 errorStock.style.display='none'

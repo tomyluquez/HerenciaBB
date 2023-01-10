@@ -7,6 +7,7 @@
 /* ESTILOS CONTENEDORES */
 .productsInd{
     background-color: var(--fondoHerencia);
+    margin-top: 120px;
 }
 
 .loginBox{
@@ -14,18 +15,22 @@
     height: 50vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.loggin{
+.loginBox{
+    color: var(--blanco);
+}
+
+/* .loggin{
     height: 100vh !important;
     display: flex;
     justify-self: center;
     align-items: center;
     margin: 0 !important;
-    position: relative;
-}
+} */
 
-.loginBox.full{
+/* .loginBox.full{
     height: 450px;
     position: absolute;
     width: 600px;
@@ -34,8 +39,8 @@
     background-color: transparent;
     justify-content: center;
     
-}
-
+} */
+/* 
 .loginBox.registred{
     justify-content: end;
     color: var(--blanco);
@@ -45,7 +50,7 @@
 .loginBox.login{
    justify-content: start;
    color: var(--blanco);
-}
+} */
 
 .cont-login,
 .cont-registred{
@@ -61,7 +66,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     height: 110%;
     color: var(--fondoHerencia);
     background-color: var(--blanco);
@@ -180,6 +185,7 @@
     top: 0;
     transition: all .4s ease;
     z-index: 700;
+    min-width: 100%;
 }
 
 .cont-menues{
@@ -305,6 +311,12 @@ th, td{
 .cantidades.prod input{
     border: 1px solid var(--fondoHerencia)
 }
+
+form.formulario{
+    max-width: 80%;
+    min-width: 50%;
+}
+
 
 /* ESTILOS INDIVIDUALES */
 .bienvenido{
@@ -558,6 +570,7 @@ ul li a{
 
 .cont-search .search{
     width: 70%;
+    min-width: 50%;
 }
 
 .cart{
@@ -617,6 +630,18 @@ h5{
     color: var(--blanco);
 }
 
+select{
+    text-align: center;
+}
+
+.logOut{
+    display: none;
+}
+
+.ind{
+    margin-top: 0;
+    gap: 0 !important;
+}
 /* HOVER */
 .registro button:hover{
     width: 70%;
@@ -639,7 +664,6 @@ ul li a:hover{
     background-color: var(--blanco);
     color: var(--fondoHerencia);
     border-radius: 5px;
-    padding: 5px 10px;
 }
 
 .scroll .buttonSearch:hover{
@@ -698,7 +722,7 @@ ul li a:hover{
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 800px) {
+@media (max-width: 950px) {
 
     body{
         position: relative;
@@ -878,7 +902,7 @@ ul li a:hover{
         margin-top: 20px;
         position: absolute;
         top: -110px;
-        left: -500px;
+        left: -1000px;
         z-index: 800;
         transition: all 0.8s ease;
     }
@@ -916,6 +940,27 @@ ul li a:hover{
     }
 
     .loggin{
+        margin-top: -10px;
+    }
+
+    .logg{
+        flex-direction: column;
+        background-color: var(--fondoHerencia);
+    }
+
+    .loginBox{
+        min-width: 100%;
+    }
+
+    .full{
+        z-index: 500;
+    }
+
+    .logearse{
+        max-width: 60%;
+    }
+
+    /* .loggin{
         flex-direction: column;
         height: 100vh;
     }
@@ -944,12 +989,22 @@ ul li a:hover{
 
     .cont-registred{
         margin-bottom: 30px;
-    }
+    } */
 
     .bienvenido{
         top: 30px;
         left: 60px;
         z-index: 500;
+    }
+
+    .formulario{
+        width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .registro{
+        width: 100% !important;
+        max-width: none;
     }
 }
 

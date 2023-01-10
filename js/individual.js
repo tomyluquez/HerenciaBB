@@ -96,6 +96,7 @@ const stockActual = (selecTalles, producto) => {
         }
       })
 }
+
 // funcion para renderizar los productos individuales //
 const renderProductos = producto => {
 
@@ -137,6 +138,27 @@ const clickButton = (producto) => {
       talleselected = option.innerHTML
     }
   }
+
+          // para cada boton, comprobamos de que se haya ingresado algun monto en las cantidades, si es un false, larga un error //
+          if(+producto.children[1].children[2].children[5].children[1].value<= 0){
+            let errorStock = document.querySelector('.errorStock')
+            errorStock.innerText = 'Por favor ingresa una cantidad valida'
+            errorStock.style.display='inline-block'
+            setTimeout(() => {
+                errorStock.style.display='none'
+            }, 3500);
+            return
+        }
+
+        if(talleselected === 'Seleccione un Talle'){
+          let errorStock = document.querySelector('.errorStock')
+          errorStock.innerText = 'Por favor selecciona un talle'
+          errorStock.style.display='inline-block'
+          setTimeout(() => {
+              errorStock.style.display='none'
+          }, 3500);
+          return
+      }
 
   const productoElegido = {
     img: srcImage.slice(21),

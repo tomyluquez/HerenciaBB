@@ -602,7 +602,7 @@ const renderProductos = productos => {
 
     const contenido = `
       <img class="imgProducts" src="${producto.img}" alt="">
-      <div class="row">
+      <div class="row nameProduct">
         <span class="spanNombre">${producto.nombre}</span>
       </div>
           <div class="row precios">

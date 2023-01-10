@@ -52,6 +52,11 @@ document.addEventListener('click', (event) => {
         
         carritoCompras.style.display='block'
         navbar.classList.add('sombra')
+
+        let finalizarCompra = document.querySelector('.seeAll')
+        finalizarCompra.addEventListener('click', ()=> {
+            document.location='compra.html'
+        })
     }    
 
     // si hacemos click en la X se cierra el carrito de compras y se quita la sombra de atras //

@@ -3,7 +3,6 @@ let loginButton = document.querySelector('.loginButton');
 let contFull = document.querySelector('.full')
 
 const usuarios = JSON.parse(localStorage.getItem('users')) || [];
-console.log(usuarios)
 
 
 registredButton.addEventListener('click', () => registrar());

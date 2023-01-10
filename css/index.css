@@ -5,12 +5,17 @@ ROOTS
 }
 
 /* ESTILOS CONTENEDORES */
+.nameProduct{
+    width: auto !important;
+}
+
 .row.precios{
     gap: 0;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: auto !important;
 }
 
 .row.precios span{
@@ -262,6 +267,7 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: auto !important;
 }
 
 .cantidades label,
@@ -361,18 +367,11 @@ h2{
 
 
 /* MEDIA QUERIES */
-@media (max-width: 800px) {
+@media (max-width: 950px) {
 
     .d-block{
         width: 80%;
         height: 450px;
-    }
-
-    .img1,
-    .img2,
-    .img3,
-    .img4{
-        width: 70%;
     }
 
     .inputs{
@@ -380,9 +379,11 @@ h2{
         gap: 0;
     }
 
-    form{
-        width: 100%;
+    form.formulario{
+        max-width: 80%;
+        min-width: 50%;
     }
+
 
     .row{
         margin: 0;
