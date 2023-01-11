@@ -290,7 +290,6 @@ th, td{
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    margin-left: -200px;
     margin-top: 80px;
     color: var(--blanco)
 }
