@@ -87,6 +87,12 @@ function eft() {
         
         contModal.style.display='flex'
         capaNegra.style.display='block'
+        localStorage.removeItem('productosElegidos');
+        let buttonIincio = document.querySelector('.inicio')
+
+            buttonIincio.addEventListener('click', () => {
+                document.location='index.html'
+            })
     })
 }
 
